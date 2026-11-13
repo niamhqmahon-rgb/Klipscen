@@ -6,7 +6,7 @@ Static preview of the new KlipScen site: plain HTML, CSS and a little vanilla JS
 |---|---|
 | Home | `index.html` |
 | Services | `services.html` |
-| Work | `work.html` |
+| Portfolio | `portfolio.html` |
 | Process | `process.html` |
 | Contact | `contact.html` |
 
