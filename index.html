@@ -39,9 +39,23 @@ details[open] .kc-plus{transform:rotate(45deg)}
 .kc-rb-arrow{offset-path:path("M 20 90 C 70 90 110 90 150 90 C 240 90 370 10 300 25 C 220 40 200 150 300 130 C 360 118 390 90 450 90 C 540 90 670 10 600 25 C 520 40 500 150 600 130 C 660 118 690 90 750 90 C 840 90 970 10 900 25 C 820 40 800 150 900 130 C 960 118 990 90 1050 90 C 1100 90 1140 90 1180 90");offset-rotate:auto;offset-distance:0%;opacity:0;animation:kcMove 4.5s linear 3.1s infinite}
 .kc-rb-node{transform-box:fill-box;transform-origin:center;animation:kcPulse 2.4s ease-in-out infinite}
 @media (max-width: 640px){.kc-scene{width:140% !important}.kc-hero-shade{background:linear-gradient(180deg, rgba(5,5,5,0.15) 0%, rgba(5,5,5,0.55) 45%, rgba(5,5,5,0.9) 70%, rgba(5,5,5,0.95) 100%) !important}}
-.kc-kenburns{transform-box:view-box;transform-origin:1527px 543px;animation:kcKen 26s ease-in-out infinite alternate}
-.kc-orbit-sage{transform-box:view-box;transform-origin:1527px 543px;animation:kcOrbit 16s linear infinite}
-.kc-orbit-cherry{transform-box:view-box;transform-origin:1527px 543px;animation:kcOrbit 23s linear infinite reverse}
+/* live design build, about 4.6s */
+.kc-b-guides{opacity:0;animation:kcIn .4s ease .05s forwards,kcOut .6s ease 3.3s forwards}
+.kc-b-select{opacity:0;animation:kcIn .3s ease .25s forwards,kcOut .5s ease 3.4s forwards}
+.kc-b-anchors{opacity:0;animation:kcIn .2s ease .5s forwards,kcOut .5s ease 3.3s forwards}
+.kc-b-line{animation:kcDraw2 1.1s cubic-bezier(.6,0,.3,1) forwards,kcOut .6s ease 3.4s forwards}
+.kc-b-l1{animation-delay:.35s,3.4s;animation-timing-function:linear,ease}.kc-b-l2{animation-delay:1.15s,3.4s;animation-duration:.6s,.6s}.kc-b-l3{animation-delay:1.3s,3.4s;animation-duration:.6s,.6s}.kc-b-l4{animation-delay:1.45s,3.4s;animation-duration:.5s,.6s}
+.kc-b-flat{opacity:0;animation:kcIn .5s ease 1.6s forwards,kcOut .9s ease 2.6s forwards}
+.kc-b-cursor{transform-box:view-box;opacity:0;animation:kcCursor 1.1s linear .35s both,kcIn .15s ease .3s forwards,kcOut .4s ease 1.9s forwards}
+.kc-develop{opacity:0;filter:grayscale(1) contrast(.75) brightness(.7);animation:kcDevelop 1.5s ease 2.1s forwards}
+.kc-lights{opacity:0;animation:kcIn .9s ease 3.7s forwards}
+@keyframes kcIn{to{opacity:1}}@keyframes kcOut{to{opacity:0}}
+@keyframes kcDraw2{to{stroke-dashoffset:0}}@keyframes kcCursor{0.0%{transform:translate(1262px,546px)}8.3%{transform:translate(1297px,678px)}16.7%{transform:translate(1393px,774px)}25.0%{transform:translate(1525px,809px)}33.3%{transform:translate(1656px,774px)}41.7%{transform:translate(1752px,678px)}50.0%{transform:translate(1788px,546px)}58.3%{transform:translate(1752px,414px)}66.7%{transform:translate(1656px,318px)}75.0%{transform:translate(1525px,283px)}83.3%{transform:translate(1393px,318px)}91.7%{transform:translate(1297px,414px)}100.0%{transform:translate(1262px,546px)}}
+@keyframes kcDevelop{0%{opacity:0;filter:grayscale(1) contrast(.75) brightness(.7)}35%{opacity:1}100%{opacity:1;filter:grayscale(0) contrast(1) brightness(1)}}
+@media (prefers-reduced-motion: reduce){.kc-build{display:none}.kc-develop,.kc-lights{animation:none;opacity:1;filter:none}}
+.kc-kenburns{transform-box:view-box;transform-origin:1525px 546px;animation:kcKen 26s ease-in-out infinite alternate}
+.kc-orbit-sage{transform-box:view-box;transform-origin:1525px 546px;animation:kcOrbit 16s linear infinite}
+.kc-orbit-cherry{transform-box:view-box;transform-origin:1525px 546px;animation:kcOrbit 23s linear infinite reverse}
 .kc-sweep{transform-box:view-box;animation:kcSweep 7.5s cubic-bezier(.45,0,.25,1) infinite}
 .kc-glint{transform-box:fill-box;transform-origin:center;opacity:0;animation:kcGlint 4.4s ease-in-out infinite}
 @keyframes kcKen{from{transform:scale(1)}to{transform:scale(1.06) translate(-14px,6px)}}
@@ -86,7 +100,7 @@ details[open] .kc-plus{transform:rotate(45deg)}
   <section style="position: relative; min-height: 880px; overflow: hidden; background: #050505; display: flex">
     <svg class="kc-scene" viewBox="0 0 1920 1176" preserveAspectRatio="xMaxYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block" role="img" aria-label="The Berlin TV tower at night, lit in golden light with sage and cherry reflections">
       <defs>
-        <mask id="kcKugel" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1176"><circle cx="1527" cy="543" r="262" fill="#ffffff"></circle><polygon points="1488,640 1505,600 1560,578 1640,572 1700,590 1960,1060 1960,1200 1630,1200" fill="#000000"></polygon></mask>
+        <mask id="kcKugel" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1176"><circle cx="1524.7" cy="546.0" r="263.0" fill="#ffffff"></circle><polygon points="1488,640 1505,600 1560,578 1640,572 1700,590 1960,1060 1960,1200 1630,1200" fill="#000000"></polygon></mask>
         <radialGradient id="kcSageGlow">
           <stop offset="0" stop-color="#a9cdb8" stop-opacity="0.7"></stop>
           <stop offset="0.5" stop-color="#52645a" stop-opacity="0.45"></stop>
@@ -104,7 +118,8 @@ details[open] .kc-plus{transform:rotate(45deg)}
         </linearGradient>
       </defs>
       <g class="kc-kenburns">
-        <image href="assets/images/hero-fernsehturm.jpg" x="0" y="0" width="1920" height="1176" preserveAspectRatio="none"></image>
+        <image class="kc-develop" href="assets/images/hero-fernsehturm-v3.jpg" x="0" y="0" width="1920" height="1176" preserveAspectRatio="none"></image>
+        <g class="kc-lights">
         <g mask="url(#kcKugel)">
           <g class="kc-orbit-sage"><circle cx="1527" cy="338" r="200" fill="url(#kcSageGlow)" style="mix-blend-mode: screen"></circle></g>
           <g class="kc-orbit-cherry"><circle cx="1527" cy="753" r="180" fill="url(#kcCherryGlow)" style="mix-blend-mode: screen"></circle></g>
@@ -119,6 +134,37 @@ details[open] .kc-plus{transform:rotate(45deg)}
         <g transform="translate(1310 668) scale(0.8)"><path class="kc-glint" d="M0 -22 L3 -3 L22 0 L3 3 L0 22 L-3 3 L-22 0 L-3 -3 Z" fill="#ffe6a8" style="animation-delay: 3.6s"></path></g>
         <g transform="translate(1363 428) scale(0.7)"><path class="kc-glint" d="M0 -22 L3 -3 L22 0 L3 3 L0 22 L-3 3 L-22 0 L-3 -3 Z" fill="#ff8fa3" style="animation-delay: 2.2s"></path></g>
         <g transform="translate(1545 339) scale(0.9)"><path class="kc-glint" d="M0 -22 L3 -3 L22 0 L3 3 L0 22 L-3 3 L-22 0 L-3 -3 Z" fill="#ffffff" style="animation-delay: 0.4s"></path></g>
+        </g>
+        <g class="kc-build" aria-hidden="true">
+          <g class="kc-b-guides" stroke="#f3dfae" stroke-width="1.2" stroke-dasharray="6 8" fill="none">
+            <line x1="0" y1="546.0" x2="1920" y2="546.0"></line><line x1="1524.7" y1="0" x2="1524.7" y2="1176"></line>
+            <line x1="0" y1="283.0" x2="1920" y2="283.0" opacity="0.6"></line><line x1="1261.7" y1="0" x2="1261.7" y2="1176" opacity="0.6"></line>
+          </g>
+          <g class="kc-b-flat"><circle cx="1524.7" cy="546.0" r="263.0" fill="#4a3518"></circle><polygon points="1466.4,586.0 1639.6,1176 1920,1176 1920,1084.4 1621.7,586.0" fill="#2f2210"></polygon><path d="M 1336 116 L 1350 150 L 1366 182 L 1384 222 L 1398 262 L 1408 300" stroke="#4a3518" stroke-width="16" stroke-linecap="round" fill="none"></path></g>
+          <g fill="none" stroke="#f3dfae" stroke-width="2.6" stroke-linecap="round">
+            <path class="kc-b-line kc-b-l1" d="M 1261.7 546.0 a 263.0 263.0 0 1 0 526.0 0 a 263.0 263.0 0 1 0 -526.0 0" style="stroke-dasharray: 1652; stroke-dashoffset: 1652"></path>
+            <line class="kc-b-line kc-b-l2" x1="1531.8" y1="808.9" x2="1639.6" y2="1176" style="stroke-dasharray: 383; stroke-dashoffset: 383"></line>
+            <line class="kc-b-line kc-b-l3" x1="1709.7" y1="733.0" x2="1920" y2="1084.4" style="stroke-dasharray: 410; stroke-dashoffset: 410"></line>
+            <path class="kc-b-line kc-b-l4" d="M 1336 116 L 1350 150 L 1366 182 L 1384 222 L 1398 262 L 1408 300" style="stroke-dasharray: 198; stroke-dashoffset: 198"></path>
+          </g>
+          <g class="kc-b-anchors" fill="#0a0a0a" stroke="#f3dfae" stroke-width="2">
+            <rect x="1254.7" y="539.0" width="14" height="14"></rect>
+            <rect x="1517.7" y="802.0" width="14" height="14"></rect>
+            <rect x="1780.7" y="539.0" width="14" height="14"></rect>
+            <rect x="1517.7" y="276.0" width="14" height="14"></rect>
+          </g>
+          <g class="kc-b-select"><rect x="1240" y="96" width="664" height="1064" fill="none" stroke="#e0405c" stroke-width="1.6"></rect>
+            <rect x="1232.0" y="88.0" width="16" height="16" fill="#ffffff" stroke="#e0405c" stroke-width="2"></rect>
+            <rect x="1564.0" y="88.0" width="16" height="16" fill="#ffffff" stroke="#e0405c" stroke-width="2"></rect>
+            <rect x="1896.0" y="88.0" width="16" height="16" fill="#ffffff" stroke="#e0405c" stroke-width="2"></rect>
+            <rect x="1232.0" y="620.0" width="16" height="16" fill="#ffffff" stroke="#e0405c" stroke-width="2"></rect>
+            <rect x="1896.0" y="620.0" width="16" height="16" fill="#ffffff" stroke="#e0405c" stroke-width="2"></rect>
+            <rect x="1232.0" y="1152.0" width="16" height="16" fill="#ffffff" stroke="#e0405c" stroke-width="2"></rect>
+            <rect x="1564.0" y="1152.0" width="16" height="16" fill="#ffffff" stroke="#e0405c" stroke-width="2"></rect>
+            <rect x="1896.0" y="1152.0" width="16" height="16" fill="#ffffff" stroke="#e0405c" stroke-width="2"></rect>
+          </g>
+          <g class="kc-b-cursor"><path d="M0 0 L0 30 L8 22 L14 35 L20 32 L14 20 L25 20 Z" fill="#ffffff" stroke="#0a0a0a" stroke-width="2" stroke-linejoin="round" transform="scale(1.5)"></path></g>
+        </g>
       </g>
     </svg>
 
