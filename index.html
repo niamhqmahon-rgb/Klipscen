@@ -29,6 +29,14 @@ details[open] .kc-plus{transform:rotate(45deg)}
 .kc-rb-shine{stroke-dasharray:120 1900;stroke-dashoffset:120;opacity:0;animation:kcShine 4.5s linear 3.1s infinite}
 .kc-rb-arrow{offset-path:path("M 20 90 C 70 90 110 90 150 90 C 240 90 370 10 300 25 C 220 40 200 150 300 130 C 360 118 390 90 450 90 C 540 90 670 10 600 25 C 520 40 500 150 600 130 C 660 118 690 90 750 90 C 840 90 970 10 900 25 C 820 40 800 150 900 130 C 960 118 990 90 1050 90 C 1100 90 1140 90 1180 90");offset-rotate:auto;offset-distance:0%;opacity:0;animation:kcMove 4.5s linear 3.1s infinite}
 .kc-rb-node{transform-box:fill-box;transform-origin:center;animation:kcPulse 2.4s ease-in-out infinite}
+@media (max-width: 640px){.kc-scene{width:140% !important}}
+.kc-blink{animation:kcBlink 2.4s steps(1) infinite}
+.kc-halo{animation:kcBreath 7s ease-in-out infinite}
+.kc-beam{animation:kcBeamGlow 9s ease-in-out infinite}
+@keyframes kcBlink{0%{opacity:1}55%{opacity:.12}}
+@keyframes kcBreath{0%,100%{opacity:.8}50%{opacity:1}}
+@keyframes kcBeamGlow{0%,100%{opacity:.65}50%{opacity:1}}
+@media (prefers-reduced-motion: reduce){.kc-blink,.kc-halo,.kc-beam{animation:none}}
 @keyframes kcDraw{to{stroke-dashoffset:0}}
 @keyframes kcShine{0%{stroke-dashoffset:120;opacity:1}100%{stroke-dashoffset:-1812;opacity:1}}
 @keyframes kcMove{0%{offset-distance:0%;opacity:1}100%{offset-distance:100%;opacity:1}}
@@ -39,10 +47,10 @@ details[open] .kc-plus{transform:rotate(45deg)}
 <style>html{scroll-behavior:smooth}#kc-sent[hidden]{display:none!important}.kc-filter{min-height:44px;padding:10px 18px;border-radius:999px;font:inherit;font-size:14px;font-weight:500;cursor:pointer;background:transparent;color:#dcd7cd;border:1px solid rgba(255,255,255,.22)}.kc-filter[aria-pressed=true]{background:#a67c2e;color:#0a0a0a;font-weight:600;border-color:transparent}</style>
 </head>
 <body>
-<div style="font-family: Inter, system-ui, sans-serif; color: #f6f3ec; background: #0a0a0a; font-size: 16px; line-height: 1.6">
+<div style="position: relative; height: 100vh; overflow-y: auto; scroll-behavior: smooth; font-family: Inter, system-ui, sans-serif; color: #f6f3ec; background: #0a0a0a; font-size: 16px; line-height: 1.6">
 
   <!-- NAV (transparent) -->
-  <header style="position: relative; z-index: 10; background: transparent">
+  <header style="position: absolute; top: 0; left: 0; right: 0; z-index: 10; background: transparent">
     <div class="kc-nav" style="max-width: 1280px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
       <a href="index.html" aria-label="KlipScen home" style="display: flex; align-items: center; min-height: 44px; text-decoration: none">
         <svg viewBox="0 0 1171.77 189.84" style="height: 26px; width: auto; display: block" aria-hidden="true"><path fill="#ffffff" d="M600.65,329.72h36.4v154h72.81v29.45H600.65Z" transform="translate(-429.42 -326.25)"></path><path fill="#ffffff" d="M734.71,329.72h36.4V513.17h-36.4Z" transform="translate(-429.42 -326.25)"></path><path fill="#ffffff" d="M813.31,329.72h62.41a104.13,104.13,0,0,1,26.59,3.33,59.53,59.53,0,0,1,22,10.54,46.85,46.85,0,0,1,14.74,18.78Q944,373.62,944,389.24q0,15.9-4.91,27a49.43,49.43,0,0,1-14.81,18.93,59.45,59.45,0,0,1-22.1,10.26,107.62,107.62,0,0,1-26.44,3.32h-26v64.42H813.31ZM869.66,421a74.9,74.9,0,0,0,15.6-1.31,30,30,0,0,0,11-5.05,26.85,26.85,0,0,0,8.38-10.11q2.88-6.09,2.88-15.32,0-9-2.88-15a26.69,26.69,0,0,0-8.38-10.11,28.91,28.91,0,0,0-10.84-5.21A66.91,66.91,0,0,0,870,357.48H849.7v63.57Z" transform="translate(-429.42 -326.25)"></path><path fill="#ffffff" d="M988.53,508.57q-18.35-7.51-30.48-20.22l18.49-25.43a88.82,88.82,0,0,0,12.14,9.82,81.84,81.84,0,0,0,17.19,9,54.48,54.48,0,0,0,19.79,3.76q16.17,0,24.7-6t8.53-16.71q0-9-6.07-14a56.6,56.6,0,0,0-14.74-8.42c-1.33-.39-3.31-1.12-5.92-2.19s-6-2.38-10.26-3.92q-5.49-2.310-10.54-4.05c-3.38-1.16-6.12-2.22-8.24-3.19q-20.22-8.69-28.89-21.73-7.51-11-7.51-26.07a50.74,50.74,0,0,1,5-22.16A48.48,48.48,0,0,1,986.94,339q17-12.75,45.65-12.74a86,86,0,0,1,25,3.61,96.76,96.76,0,0,1,21.09,8.95,73.18,73.18,0,0,1,14.63,10.84l-15.6,24.85q-7.23-7.8-19.8-13.58a61.18,61.18,0,0,0-25.9-5.76q-14.44,0-22.1,5.39t-7.6,15.28a15.61,15.61,0,0,0,3.41,10.33,27,27,0,0,0,7.66,6.52,88.84,88.84,0,0,0,10,4.63l15,5.8q17.32,6,19.93,7.49,19.35,8.7,28,21.16,8.39,11.88,8.38,28.1a51.75,51.75,0,0,1-3.32,18,52.4,52.4,0,0,1-10,16.51q-8.62,9.78-22.63,15.79t-33.08,5.93A97.21,97.21,0,0,1,988.53,508.57Z" transform="translate(-429.42 -326.25)"></path><path fill="#ffffff" d="M1157,504.93q-19.79-11.16-31.2-32.76T1114.36,421q0-29.28,12.28-50.72t32.5-32.75a89.13,89.13,0,0,1,44.17-11.29q20.81,0,35.54,7.1t22,14.34q7.22,7.24,9.53,11.3l-19.07,24a43.76,43.76,0,0,0-9.82-11.56,56.34,56.34,0,0,0-16-9.58,53.43,53.43,0,0,0-20.37-3.81q-15.88,0-28,7.69a51.41,51.41,0,0,0-18.93,21.92q-6.89,14.2-6.88,32.79t6.65,32.8a51.82,51.82,0,0,0,18.63,22.06q12,7.85,27.880,7.83a53.49,53.49,0,0,0,20.37-3.94,63.09,63.09,0,0,0,16.62-9.74,53.36,53.36,0,0,0,10.69-11.56l18.78,24.56q-4.64,7.83-14.16,15.65a79.13,79.13,0,0,1-23.69,12.9,92.28,92.28,0,0,1-31.21,5.07Q1176.76,516.08,1157,504.93Z" transform="translate(-429.42 -326.25)"></path><path fill="#ffffff" d="M1297,329.72h117.88v28.61h-81.48v44.49h75.7v28.9h-75.7v52h84.08v29.45H1297Z" transform="translate(-429.42 -326.25)"></path><path fill="#ffffff" d="M1449.51,329.72h39L1566.81,456V329.72h34.38V513.17h-35l-82.35-132.9v132.9h-34.33Z" transform="translate(-429.42 -326.25)"></path><rect fill="#a67c2e" y="3.46" width="36.41" height="183.47"></rect><polygon fill="#a67c2e" points="138.53 186.93 138.53 186.93 50.52 95.19 138.53 3.46 138.53 3.46 138.53 186.93"></polygon></svg>
@@ -59,11 +67,133 @@ details[open] .kc-plus{transform:rotate(45deg)}
     </div>
   </header>
 
-  <!-- HERO -->
-  <section style="max-width: 1280px; margin: 0 auto; padding: 72px 24px 56px">
-    <h1 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(64px, 11vw, 168px); line-height: 0.88; letter-spacing: 0.005em; color: #ffffff; max-width: 1200px">More than just edits.<br>Stories that <span style="color: #a67c2e">move.</span></h1>
-    <div style="margin-top: 40px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px">
-      <p style="margin: 0; max-width: 560px; font-size: 18px; color: #b5b0a6">KlipScen provides expert support in Editing, Motion Design, AI Animation, Social Media Marketing and Web Development, crafted by one team under one roof.</p>
+  <!-- HERO: night scene, Fernsehturm in golden light -->
+  <section style="position: relative; min-height: 880px; overflow: hidden; background: #050505; display: flex">
+    <svg class="kc-scene" viewBox="0 0 1440 900" preserveAspectRatio="xMaxYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block" aria-hidden="true">
+      <defs>
+        <radialGradient id="kcSky" cx="0.72" cy="0.45" r="0.75">
+          <stop offset="0" stop-color="#16110a"></stop>
+          <stop offset="0.35" stop-color="#0a0806"></stop>
+          <stop offset="1" stop-color="#040404"></stop>
+        </radialGradient>
+        <radialGradient id="kcHalo" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#e3aa4c" stop-opacity="0.38"></stop>
+          <stop offset="0.45" stop-color="#b9842f" stop-opacity="0.12"></stop>
+          <stop offset="1" stop-color="#b9842f" stop-opacity="0"></stop>
+        </radialGradient>
+        <linearGradient id="kcShaft" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#f6cf7c"></stop>
+          <stop offset="0.16" stop-color="#cf973f"></stop>
+          <stop offset="0.45" stop-color="#5e411b"></stop>
+          <stop offset="0.75" stop-color="#1d150c"></stop>
+          <stop offset="1" stop-color="#0b0806"></stop>
+        </linearGradient>
+        <radialGradient id="kcSphere" cx="0.5" cy="0.5" r="0.5" fx="0.3" fy="0.32">
+          <stop offset="0" stop-color="#ffe6a8"></stop>
+          <stop offset="0.22" stop-color="#dba44b"></stop>
+          <stop offset="0.52" stop-color="#7c5522"></stop>
+          <stop offset="0.85" stop-color="#21170c"></stop>
+          <stop offset="1" stop-color="#0d0a06"></stop>
+        </radialGradient>
+        <linearGradient id="kcBeam" gradientUnits="userSpaceOnUse" x1="560" y1="900" x2="1040" y2="420">
+          <stop offset="0" stop-color="#e8b25a" stop-opacity="0"></stop>
+          <stop offset="0.55" stop-color="#e8b25a" stop-opacity="0.08"></stop>
+          <stop offset="1" stop-color="#f0c06a" stop-opacity="0.22"></stop>
+        </linearGradient>
+        <linearGradient id="kcAntennaLight" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#f6cf7c" stop-opacity="0.55"></stop>
+          <stop offset="0.5" stop-color="#f6cf7c" stop-opacity="0"></stop>
+          <stop offset="1" stop-color="#000000" stop-opacity="0.45"></stop>
+        </linearGradient>
+        <pattern id="kcWin" width="7" height="14" patternUnits="userSpaceOnUse">
+          <rect x="1" y="2" width="4" height="9" rx="1" fill="#ffd27a"></rect>
+        </pattern>
+        <clipPath id="kcSphereClip"><circle cx="1040" cy="420" r="58"></circle></clipPath>
+        <filter id="kcBlur20" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="20"></feGaussianBlur></filter>
+        <filter id="kcBlur6" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"></feGaussianBlur></filter>
+        <filter id="kcBlur3" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"></feGaussianBlur></filter>
+      </defs>
+
+      <!-- sky -->
+      <rect width="1440" height="900" fill="url(#kcSky)"></rect>
+      <g fill="#ffffff">
+        <circle cx="210" cy="120" r="0.9" opacity="0.22"></circle>
+        <circle cx="420" cy="70" r="0.7" opacity="0.18"></circle>
+        <circle cx="690" cy="160" r="0.8" opacity="0.16"></circle>
+        <circle cx="860" cy="60" r="0.9" opacity="0.2"></circle>
+        <circle cx="1250" cy="110" r="0.8" opacity="0.2"></circle>
+        <circle cx="1360" cy="210" r="0.7" opacity="0.15"></circle>
+        <circle cx="1180" cy="40" r="0.6" opacity="0.18"></circle>
+      </g>
+
+      <!-- golden light -->
+      <circle class="kc-halo" cx="1040" cy="420" r="300" fill="url(#kcHalo)"></circle>
+      <polygon class="kc-beam" points="540,900 690,900 1075,410 1005,385" fill="url(#kcBeam)" filter="url(#kcBlur6)"></polygon>
+      <ellipse cx="1040" cy="930" rx="520" ry="150" fill="#c48e3a" opacity="0.1" filter="url(#kcBlur20)"></ellipse>
+
+      <!-- Berlin skyline, barely visible -->
+      <path d="M0 900 L0 800 L60 800 L60 780 L130 780 L130 810 L190 810 L190 770 L250 770 L250 795 L320 795 L320 760 L360 760 L360 790 L430 790 L430 805 L520 805 L520 770 L540 770 L540 745 Q 600 688 660 745 L660 770 L690 770 L690 800 L780 800 L780 775 L860 775 L860 805 L940 805 L940 790 L1000 790 L1000 900 Z" fill="#0c0b0a"></path>
+      <path d="M1080 900 L1080 795 L1150 795 L1150 770 L1230 770 L1230 800 L1300 800 L1300 780 L1380 780 L1380 805 L1440 805 L1440 900 Z" fill="#0c0b0a"></path>
+      <rect x="597" y="676" width="6" height="16" fill="#0c0b0a"></rect>
+      <g fill="#c48e3a" opacity="0.2">
+        <rect x="78" y="812" width="3" height="4"></rect>
+        <rect x="205" y="790" width="3" height="4"></rect>
+        <rect x="332" y="778" width="3" height="4"></rect>
+        <rect x="470" y="820" width="3" height="4"></rect>
+        <rect x="800" y="792" width="3" height="4"></rect>
+        <rect x="905" y="818" width="3" height="4"></rect>
+        <rect x="1170" y="790" width="3" height="4"></rect>
+        <rect x="1320" y="798" width="3" height="4"></rect>
+      </g>
+
+      <!-- Fernsehturm: shaft -->
+      <path d="M1006 900 L1027 478 L1053 478 L1074 900 Z" fill="url(#kcShaft)"></path>
+      <path d="M1007 900 L1028 478" stroke="#ffdb8f" stroke-width="1.5" opacity="0.55"></path>
+      <path d="M1040 480 L1040 900" stroke="#000000" stroke-width="2" opacity="0.18"></path>
+      <ellipse cx="1040" cy="477" rx="15" ry="3" fill="#0b0806"></ellipse>
+
+      <!-- upper neck, platform and antenna -->
+      <rect x="1031" y="328" width="18" height="40" fill="url(#kcShaft)"></rect>
+      <rect x="1034" y="280" width="12" height="52" fill="url(#kcShaft)"></rect>
+      <polygon points="1038.5,70 1041.5,70 1041.92,105 1038.08,105" fill="#8f2a1c"></polygon>
+      <polygon points="1038.08,105 1041.92,105 1042.33,140 1037.67,140" fill="#c9bca6"></polygon>
+      <polygon points="1037.67,140 1042.33,140 1042.75,175 1037.25,175" fill="#8f2a1c"></polygon>
+      <polygon points="1037.25,175 1042.75,175 1043.17,210 1036.83,210" fill="#c9bca6"></polygon>
+      <polygon points="1036.83,210 1043.17,210 1043.58,245 1036.42,245" fill="#8f2a1c"></polygon>
+      <polygon points="1036.42,245 1043.58,245 1044,280 1036,280" fill="#c9bca6"></polygon>
+      <polygon points="1038.5,70 1041.5,70 1044,280 1036,280" fill="url(#kcAntennaLight)"></polygon>
+
+      <!-- sphere -->
+      <circle cx="1040" cy="420" r="58" fill="url(#kcSphere)"></circle>
+      <g clip-path="url(#kcSphereClip)">
+        <ellipse cx="1040" cy="420" rx="20" ry="58" fill="none" stroke="#000000" stroke-opacity="0.3" stroke-width="1.2"></ellipse>
+        <ellipse cx="1040" cy="420" rx="40" ry="58" fill="none" stroke="#000000" stroke-opacity="0.25" stroke-width="1.2"></ellipse>
+        <line x1="1040" y1="362" x2="1040" y2="478" stroke="#000000" stroke-opacity="0.3" stroke-width="1.2"></line>
+        <line x1="980" y1="384" x2="1100" y2="384" stroke="#000000" stroke-opacity="0.22" stroke-width="1.2"></line>
+        <line x1="980" y1="400" x2="1100" y2="400" stroke="#000000" stroke-opacity="0.22" stroke-width="1.2"></line>
+        <line x1="980" y1="446" x2="1100" y2="446" stroke="#000000" stroke-opacity="0.22" stroke-width="1.2"></line>
+        <line x1="980" y1="462" x2="1100" y2="462" stroke="#000000" stroke-opacity="0.22" stroke-width="1.2"></line>
+        <rect x="980" y="411" width="120" height="20" fill="#120c06"></rect>
+        <rect x="980" y="414" width="120" height="14" fill="url(#kcWin)" opacity="0.9"></rect>
+        <rect x="980" y="411" width="120" height="20" fill="#ffcf73" opacity="0.12" filter="url(#kcBlur3)"></rect>
+        <ellipse cx="1016" cy="396" rx="18" ry="13" fill="#fff1c9" opacity="0.5" filter="url(#kcBlur6)"></ellipse>
+      </g>
+      <circle cx="1040" cy="420" r="58" fill="none" stroke="#ffd889" stroke-opacity="0.18" stroke-width="1"></circle>
+
+      <!-- aviation light -->
+      <circle class="kc-blink" cx="1040" cy="66" r="10" fill="#ff3b2f" opacity="0.35" filter="url(#kcBlur3)"></circle>
+      <circle class="kc-blink" cx="1040" cy="66" r="2.6" fill="#ff5a4a"></circle>
+
+      <!-- foreground ground -->
+      <rect x="0" y="872" width="1440" height="28" fill="#060606"></rect>
+    </svg>
+
+    <!-- vignette for headline legibility -->
+    <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,5,5,0.88) 0%, rgba(5,5,5,0.5) 38%, rgba(5,5,5,0) 62%)"></div>
+    <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 200px; background: linear-gradient(180deg, rgba(10,10,10,0) 0%, #0a0a0a 100%)"></div>
+
+    <div style="position: relative; width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 160px 24px 120px; display: flex; flex-direction: column; justify-content: flex-end; gap: 40px">
+      <h1 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(56px, 7.5vw, 120px); line-height: 0.9; letter-spacing: 0.005em; color: #ffffff; max-width: 880px">More than just edits.<br>Stories that <span style="color: #a67c2e">move.</span></h1>
       <div style="display: flex; flex-wrap: wrap; gap: 12px">
         <a class="kc-btn" href="contact.html" style="display: flex; align-items: center; gap: 10px; padding: 16px 28px; border-radius: 999px; background: #a67c2e; color: #0a0a0a; font-weight: 600; text-decoration: none">
           <svg width="16" height="16" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="#0a0a0a" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>Contact us
