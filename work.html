@@ -14,9 +14,9 @@ a{color:#f6f3ec}a:hover{color:#ffffff}
 .kc-nav a{transition:color .2s ease,background-color .2s ease,box-shadow .2s ease,filter .2s ease}
 .kc-nav a.kc-link:hover{color:#ffffff;background:rgba(255,255,255,.1);box-shadow:0 8px 24px rgba(0,0,0,.5)}
 .kc-btn{transition:box-shadow .2s ease,filter .2s ease}
-.kc-btn:hover{box-shadow:0 10px 30px rgba(166,124,46,.4);filter:brightness(1.1)}
+.kc-btn:hover{background:#b5193a !important;color:#f6f3ec !important;box-shadow:0 10px 30px rgba(181,25,58,.35)}.kc-btn:hover svg path{stroke:#f6f3ec}.kc-sage{transition:background-color .2s ease,box-shadow .2s ease}.kc-sage:hover{background:#3f4e46 !important;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .kc-chip{transition:background-color .2s ease,box-shadow .2s ease}
-.kc-chip:hover{box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.kc-chip:hover{box-shadow:0 8px 24px rgba(0,0,0,.45);border-color:#b5193a !important}
 .kc-tile{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
 .kc-tile:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.3);box-shadow:0 18px 40px rgba(0,0,0,.5)}
 :focus-visible{outline:2px solid #a67c2e;outline-offset:3px}
@@ -35,7 +35,7 @@ a{color:#f6f3ec}a:hover{color:#ffffff}
       <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
         <a class="kc-link" href="index.html" style="padding: 12px 16px; border-radius: 999px; font-size: 14px; font-weight: 500; text-decoration: none; color: #dcd7cd">Home</a>
         <a class="kc-link" href="services.html" style="padding: 12px 16px; border-radius: 999px; font-size: 14px; font-weight: 500; text-decoration: none; color: #dcd7cd">Services</a>
-        <a class="kc-link" href="work.html" aria-current="page" style="padding: 12px 16px; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none; color: #ffffff; background: rgba(255,255,255,0.1)">Work</a>
+        <a class="kc-link" href="work.html" aria-current="page" style="padding: 12px 16px; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none; color: #ffffff; background: rgba(255,255,255,0.1); box-shadow: inset 0 -2px 0 #b5193a">Work</a>
         <a class="kc-link" href="process.html" style="padding: 12px 16px; border-radius: 999px; font-size: 14px; font-weight: 500; text-decoration: none; color: #dcd7cd">Process</a>
         <a class="kc-btn" href="contact.html" style="margin-left: 8px; display: flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 999px; background: #a67c2e; color: #0a0a0a; font-size: 14px; font-weight: 600; text-decoration: none">
           <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="#0a0a0a" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>Contact us
@@ -46,7 +46,7 @@ a{color:#f6f3ec}a:hover{color:#ffffff}
 
   <!-- PAGE HERO + FILTERS -->
   <section style="max-width: 1280px; margin: 0 auto; padding: 72px 24px 48px">
-    <h1 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(64px, 10vw, 152px); line-height: 0.88; color: #ffffff">Our work</h1>
+    <h1 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(64px, 10vw, 152px); line-height: 0.88; color: #ffffff">Our <span style="color: #7a9184">work.</span></h1>
     <div style="margin-top: 32px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
       <p style="margin: 0; max-width: 560px; font-size: 18px; color: #b5b0a6">From concept to final cut, projects that show our craft. Filter by format to find work like yours.</p>
       <div role="group" aria-label="Filter by format" style="display: flex; flex-wrap: wrap; gap: 8px">
@@ -59,7 +59,7 @@ a{color:#f6f3ec}a:hover{color:#ffffff}
   </section>
 
   <!-- GRID -->
-  <section style="max-width: 1280px; margin: 0 auto; padding: 0 24px 120px">
+  <section style="max-width: 1280px; margin: 0 auto; padding: 0 24px 96px">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 20px">
       
         <a href="contact.html" class="kc-tile kc-work" data-tag="Short form" style="display: block; text-decoration: none; border-radius: 24px; overflow: hidden; background: #161616; border: 1px solid rgba(255,255,255,0.08)">
@@ -172,10 +172,12 @@ a{color:#f6f3ec}a:hover{color:#ffffff}
     </div>
   </section>
 
+  <div aria-hidden="true" style="display: flex; gap: 6px; height: 4px; max-width: 1232px; margin: 0 auto 96px; box-sizing: content-box; padding: 0 24px"><span style="flex: 6; border-radius: 2px; background: #a67c2e"></span><span style="flex: 2; border-radius: 2px; background: #52645a"></span><span style="flex: 1; border-radius: 2px; background: #b5193a"></span></div>
+
   <!-- CTA (off-white sheet) -->
   <section style="background: #f6f3ec; color: #0a0a0a; border-radius: 40px 40px 0 0">
     <div style="max-width: 1280px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px">
-      <h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(48px, 6vw, 96px); line-height: 0.9; color: #0a0a0a">Your footage<br>could be next.</h2>
+      <h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(48px, 6vw, 96px); line-height: 0.9; color: #0a0a0a">Your footage<br>could be <span style="color: #b5193a">next.</span></h2>
       <a class="kc-btn" href="contact.html" style="display: flex; align-items: center; gap: 10px; padding: 16px 28px; border-radius: 999px; background: #0a0a0a; color: #ffffff; font-weight: 600; text-decoration: none">
         <svg width="16" height="16" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="#ffffff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>Contact us
       </a>
@@ -183,7 +185,8 @@ a{color:#f6f3ec}a:hover{color:#ffffff}
   </section>
 
   <!-- FOOTER -->
-  <footer style="background: #050505; border-top: 1px solid rgba(255,255,255,0.06)">
+  <footer style="background: #050505">
+    <div aria-hidden="true" style="display: flex; height: 4px"><span style="flex: 6; background: #a67c2e"></span><span style="flex: 2; background: #52645a"></span><span style="flex: 1; background: #b5193a"></span></div>
     <div style="max-width: 1280px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; font-size: 14px; color: #8f8a80">
       <span>© 2026 KlipScen Digital Agency</span>
       <nav aria-label="Footer" class="kc-nav" style="display: flex; flex-wrap: wrap; gap: 4px">

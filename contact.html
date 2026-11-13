@@ -14,7 +14,7 @@ a{color:#f6f3ec}a:hover{color:#ffffff}
 .kc-nav a{transition:color .2s ease,background-color .2s ease,box-shadow .2s ease,filter .2s ease}
 .kc-nav a.kc-link:hover{color:#ffffff;background:rgba(255,255,255,.1);box-shadow:0 8px 24px rgba(0,0,0,.5)}
 .kc-btn{transition:box-shadow .2s ease,filter .2s ease}
-.kc-btn:hover{box-shadow:0 10px 30px rgba(166,124,46,.4);filter:brightness(1.1)}
+.kc-btn:hover{background:#b5193a !important;color:#f6f3ec !important;box-shadow:0 10px 30px rgba(181,25,58,.35)}.kc-btn:hover svg path{stroke:#f6f3ec}.kc-sage{transition:background-color .2s ease,box-shadow .2s ease}.kc-sage:hover{background:#3f4e46 !important;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .kc-ghost{transition:background-color .2s ease,box-shadow .2s ease}
 .kc-ghost:hover{background:rgba(255,255,255,.1);box-shadow:0 8px 24px rgba(0,0,0,.4)}
 details summary{list-style:none;cursor:pointer}
@@ -47,7 +47,7 @@ details[open] .kc-plus{transform:rotate(45deg)}
   </header>
 
   <!-- CONTACT -->
-  <section style="max-width: 1280px; margin: 0 auto; padding: 72px 24px 120px">
+  <section style="max-width: 1280px; margin: 0 auto; padding: 72px 24px 96px">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr)); gap: 64px; align-items: start">
       <div style="display: flex; flex-direction: column; gap: 40px">
         <div>
@@ -104,11 +104,13 @@ details[open] .kc-plus{transform:rotate(45deg)}
     </div>
   </section>
 
+  <div aria-hidden="true" style="display: flex; gap: 6px; height: 4px; max-width: 1232px; margin: 0 auto 96px; box-sizing: content-box; padding: 0 24px"><span style="flex: 6; border-radius: 2px; background: #a67c2e"></span><span style="flex: 2; border-radius: 2px; background: #52645a"></span><span style="flex: 1; border-radius: 2px; background: #b5193a"></span></div>
+
   <!-- FAQ (off-white sheet) -->
   <section style="background: #f6f3ec; color: #0a0a0a; border-radius: 40px 40px 0 0">
     <div style="max-width: 1280px; margin: 0 auto; padding: 112px 24px 120px">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 48px; align-items: start">
-        <h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(48px, 6vw, 88px); line-height: 0.92; color: #0a0a0a">Good questions.</h2>
+        <h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(48px, 6vw, 88px); line-height: 0.92; color: #0a0a0a">Good <span style="color: #52645a">questions.</span></h2>
         <div style="border-top: 1px solid #ddd5c6">
           <details open="" style="border-bottom: 1px solid #ddd5c6">
             <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 0; font-size: 19px; font-weight: 500; color: #0a0a0a">What do you need from me to get started?<span class="kc-plus" aria-hidden="true" style="font-size: 28px; line-height: 1; color: #52645a">+</span></summary>
@@ -132,7 +134,8 @@ details[open] .kc-plus{transform:rotate(45deg)}
   </section>
 
   <!-- FOOTER -->
-  <footer style="background: #050505; border-top: 1px solid rgba(255,255,255,0.06)">
+  <footer style="background: #050505">
+    <div aria-hidden="true" style="display: flex; height: 4px"><span style="flex: 6; background: #a67c2e"></span><span style="flex: 2; background: #52645a"></span><span style="flex: 1; background: #b5193a"></span></div>
     <div style="max-width: 1280px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; font-size: 14px; color: #8f8a80">
       <span>© 2026 KlipScen Digital Agency</span>
       <nav aria-label="Footer" class="kc-nav" style="display: flex; flex-wrap: wrap; gap: 4px">
