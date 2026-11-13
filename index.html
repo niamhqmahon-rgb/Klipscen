@@ -30,13 +30,11 @@ details[open] .kc-plus{transform:rotate(45deg)}
 .kc-rb-arrow{offset-path:path("M 20 90 C 70 90 110 90 150 90 C 240 90 370 10 300 25 C 220 40 200 150 300 130 C 360 118 390 90 450 90 C 540 90 670 10 600 25 C 520 40 500 150 600 130 C 660 118 690 90 750 90 C 840 90 970 10 900 25 C 820 40 800 150 900 130 C 960 118 990 90 1050 90 C 1100 90 1140 90 1180 90");offset-rotate:auto;offset-distance:0%;opacity:0;animation:kcMove 4.5s linear 3.1s infinite}
 .kc-rb-node{transform-box:fill-box;transform-origin:center;animation:kcPulse 2.4s ease-in-out infinite}
 @media (max-width: 640px){.kc-scene{width:140% !important}}
-.kc-blink{animation:kcBlink 2.4s steps(1) infinite}
 .kc-halo{animation:kcBreath 7s ease-in-out infinite}
 .kc-beam{animation:kcBeamGlow 9s ease-in-out infinite}
-@keyframes kcBlink{0%{opacity:1}55%{opacity:.12}}
 @keyframes kcBreath{0%,100%{opacity:.8}50%{opacity:1}}
 @keyframes kcBeamGlow{0%,100%{opacity:.65}50%{opacity:1}}
-@media (prefers-reduced-motion: reduce){.kc-blink,.kc-halo,.kc-beam{animation:none}}
+@media (prefers-reduced-motion: reduce){.kc-halo,.kc-beam{animation:none}}
 @keyframes kcDraw{to{stroke-dashoffset:0}}
 @keyframes kcShine{0%{stroke-dashoffset:120;opacity:1}100%{stroke-dashoffset:-1812;opacity:1}}
 @keyframes kcMove{0%{offset-distance:0%;opacity:1}100%{offset-distance:100%;opacity:1}}
@@ -67,7 +65,7 @@ details[open] .kc-plus{transform:rotate(45deg)}
     </div>
   </header>
 
-  <!-- HERO: night scene, Fernsehturm in golden light -->
+  <!-- HERO: night scene, upper Fernsehturm in golden light -->
   <section style="position: relative; min-height: 880px; overflow: hidden; background: #050505; display: flex">
     <svg class="kc-scene" viewBox="0 0 1440 900" preserveAspectRatio="xMaxYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block" aria-hidden="true">
       <defs>
@@ -95,7 +93,7 @@ details[open] .kc-plus{transform:rotate(45deg)}
           <stop offset="0.85" stop-color="#21170c"></stop>
           <stop offset="1" stop-color="#0d0a06"></stop>
         </radialGradient>
-        <linearGradient id="kcBeam" gradientUnits="userSpaceOnUse" x1="560" y1="900" x2="1040" y2="420">
+        <linearGradient id="kcBeam" gradientUnits="userSpaceOnUse" x1="560" y1="900" x2="1020" y2="520">
           <stop offset="0" stop-color="#e8b25a" stop-opacity="0"></stop>
           <stop offset="0.55" stop-color="#e8b25a" stop-opacity="0.08"></stop>
           <stop offset="1" stop-color="#f0c06a" stop-opacity="0.22"></stop>
@@ -108,7 +106,7 @@ details[open] .kc-plus{transform:rotate(45deg)}
         <pattern id="kcWin" width="7" height="14" patternUnits="userSpaceOnUse">
           <rect x="1" y="2" width="4" height="9" rx="1" fill="#ffd27a"></rect>
         </pattern>
-        <clipPath id="kcSphereClip"><circle cx="1040" cy="420" r="58"></circle></clipPath>
+        <clipPath id="kcSphereClip"><circle cx="1060" cy="520" r="165"></circle></clipPath>
         <filter id="kcBlur20" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="20"></feGaussianBlur></filter>
         <filter id="kcBlur6" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"></feGaussianBlur></filter>
         <filter id="kcBlur3" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"></feGaussianBlur></filter>
@@ -127,14 +125,152 @@ details[open] .kc-plus{transform:rotate(45deg)}
       </g>
 
       <!-- golden light -->
-      <circle class="kc-halo" cx="1040" cy="420" r="300" fill="url(#kcHalo)"></circle>
-      <polygon class="kc-beam" points="540,900 690,900 1075,410 1005,385" fill="url(#kcBeam)" filter="url(#kcBlur6)"></polygon>
+      <circle class="kc-halo" cx="1045" cy="515" r="440" fill="url(#kcHalo)"></circle>
+      <polygon class="kc-beam" points="480,900 700,900 1090,600 960,450" fill="url(#kcBeam)" filter="url(#kcBlur6)"></polygon>
       <ellipse cx="1040" cy="930" rx="520" ry="150" fill="#c48e3a" opacity="0.1" filter="url(#kcBlur20)"></ellipse>
+
+      <!-- Fernsehturm, upper half, tilted slightly left -->
+      <g transform="rotate(-7 1060 520)">
+        <path d="M1012 640 L996 1180 L1124 1180 L1108 640 Z" fill="url(#kcShaft)"></path>
+        <path d="M1013 660 L997 1180" stroke="#ffdc94" stroke-width="2" opacity="0.5"></path>
+        <path d="M1038 660 L1031.4 1180" stroke="#000000" stroke-width="1.2" opacity="0.14"></path>
+        <path d="M1060 660 L1060.0 1180" stroke="#000000" stroke-width="1.2" opacity="0.14"></path>
+        <path d="M1082 660 L1088.6 1180" stroke="#000000" stroke-width="1.2" opacity="0.14"></path>
+        <rect x="1026" y="300" width="68" height="80" fill="url(#kcShaft)"></rect>
+        <rect x="1016" y="291" width="88" height="10" rx="2" fill="url(#kcShaft)"></rect>
+        <rect x="1016" y="299" width="88" height="3" fill="#000000" opacity="0.35"></rect>
+        <rect x="1034" y="180" width="52" height="112" fill="url(#kcShaft)"></rect>
+        <rect x="1034" y="205" width="52" height="1.5" fill="#000000" opacity="0.25"></rect>
+        <rect x="1034" y="232" width="52" height="1.5" fill="#000000" opacity="0.25"></rect>
+        <rect x="1034" y="259" width="52" height="1.5" fill="#000000" opacity="0.25"></rect>
+        <rect x="1029" y="172" width="62" height="9" rx="2" fill="url(#kcShaft)"></rect>
+        <polygon points="1054.0,-260.0 1066.0,-260.0 1066.9,-206.0 1053.1,-206.0" fill="#9a3322"></polygon>
+        <polygon points="1053.1,-206.0 1066.9,-206.0 1067.8,-152.0 1052.2,-152.0" fill="#d6cab4"></polygon>
+        <polygon points="1052.2,-152.0 1067.8,-152.0 1068.6,-98.0 1051.4,-98.0" fill="#9a3322"></polygon>
+        <polygon points="1051.4,-98.0 1068.6,-98.0 1069.5,-44.0 1050.5,-44.0" fill="#d6cab4"></polygon>
+        <polygon points="1050.5,-44.0 1069.5,-44.0 1070.4,10.0 1049.6,10.0" fill="#9a3322"></polygon>
+        <polygon points="1049.6,10.0 1070.4,10.0 1071.2,64.0 1048.8,64.0" fill="#d6cab4"></polygon>
+        <polygon points="1048.8,64.0 1071.2,64.0 1072.1,118.0 1047.9,118.0" fill="#9a3322"></polygon>
+        <polygon points="1047.9,118.0 1072.1,118.0 1073.0,172.0 1047.0,172.0" fill="#d6cab4"></polygon>
+        <polygon points="1054.0,-260 1066.0,-260 1073.0,172 1047.0,172" fill="url(#kcAntennaLight)"></polygon>
+        <rect x="1053.7" y="-240" width="12.6" height="1" fill="#000000" opacity="0.3"></rect>
+        <rect x="1053.2" y="-213" width="13.5" height="1" fill="#000000" opacity="0.3"></rect>
+        <rect x="1052.8" y="-186" width="14.4" height="1" fill="#000000" opacity="0.3"></rect>
+        <rect x="1052.4" y="-159" width="15.3" height="1" fill="#000000" opacity="0.3"></rect>
+        <rect x="1051.9" y="-132" width="16.1" height="1" fill="#000000" opacity="0.3"></rect>
+        <rect x="1051.5" y="-105" width="17.0" height="1" fill="#000000" opacity="0.3"></rect>
+        <rect x="1051.1" y="-78" width="17.9" height="1" fill="#000000" opacity="0.3"></rect>
+        <rect x="1050.6" y="-51" width="18.8" height="1" fill="#000000" opacity="0.3"></rect>
+        <rect x="1050.2" y="-24" width="19.6" height="1" fill="#000000" opacity="0.3"></rect>
+        <rect x="1049.7" y="3" width="20.5" height="1" fill="#000000" opacity="0.3"></rect>
+        <rect x="1049.3" y="30" width="21.4" height="1" fill="#000000" opacity="0.3"></rect>
+        <rect x="1048.9" y="57" width="22.3" height="1" fill="#000000" opacity="0.3"></rect>
+        <rect x="1048.4" y="84" width="23.1" height="1" fill="#000000" opacity="0.3"></rect>
+        <rect x="1048.0" y="111" width="24.0" height="1" fill="#000000" opacity="0.3"></rect>
+        <rect x="1047.6" y="138" width="24.9" height="1" fill="#000000" opacity="0.3"></rect>
+        <rect x="1047.1" y="165" width="25.8" height="1" fill="#000000" opacity="0.3"></rect>
+        <circle cx="1060" cy="520" r="165" fill="url(#kcSphere)"></circle>
+        <g clip-path="url(#kcSphereClip)">
+          <path d="M1060 355 A 159.4 165 0 0 0 1060 685" fill="none" stroke="#000000" stroke-opacity="0.16" stroke-width="1.1"></path>
+          <path d="M1058.5 355 A 159.4 165 0 0 0 1058.5 685" fill="none" stroke="#ffe3a3" stroke-opacity="0.07" stroke-width="1"></path>
+          <path d="M1060 355 A 142.9 165 0 0 0 1060 685" fill="none" stroke="#000000" stroke-opacity="0.16" stroke-width="1.1"></path>
+          <path d="M1058.5 355 A 142.9 165 0 0 0 1058.5 685" fill="none" stroke="#ffe3a3" stroke-opacity="0.07" stroke-width="1"></path>
+          <path d="M1060 355 A 116.7 165 0 0 0 1060 685" fill="none" stroke="#000000" stroke-opacity="0.16" stroke-width="1.1"></path>
+          <path d="M1058.5 355 A 116.7 165 0 0 0 1058.5 685" fill="none" stroke="#ffe3a3" stroke-opacity="0.07" stroke-width="1"></path>
+          <path d="M1060 355 A 82.5 165 0 0 0 1060 685" fill="none" stroke="#000000" stroke-opacity="0.16" stroke-width="1.1"></path>
+          <path d="M1058.5 355 A 82.5 165 0 0 0 1058.5 685" fill="none" stroke="#ffe3a3" stroke-opacity="0.07" stroke-width="1"></path>
+          <path d="M1060 355 A 42.7 165 0 0 0 1060 685" fill="none" stroke="#000000" stroke-opacity="0.16" stroke-width="1.1"></path>
+          <path d="M1058.5 355 A 42.7 165 0 0 0 1058.5 685" fill="none" stroke="#ffe3a3" stroke-opacity="0.07" stroke-width="1"></path>
+          <line x1="1060" y1="355" x2="1060" y2="685" stroke="#000000" stroke-opacity="0.18" stroke-width="1.1"></line>
+          <path d="M1060 355 A 42.7 165 0 0 1 1060 685" fill="none" stroke="#000000" stroke-opacity="0.16" stroke-width="1.1"></path>
+          <path d="M1058.5 355 A 42.7 165 0 0 1 1058.5 685" fill="none" stroke="#ffe3a3" stroke-opacity="0.07" stroke-width="1"></path>
+          <path d="M1060 355 A 82.5 165 0 0 1 1060 685" fill="none" stroke="#000000" stroke-opacity="0.16" stroke-width="1.1"></path>
+          <path d="M1058.5 355 A 82.5 165 0 0 1 1058.5 685" fill="none" stroke="#ffe3a3" stroke-opacity="0.07" stroke-width="1"></path>
+          <path d="M1060 355 A 116.7 165 0 0 1 1060 685" fill="none" stroke="#000000" stroke-opacity="0.16" stroke-width="1.1"></path>
+          <path d="M1058.5 355 A 116.7 165 0 0 1 1058.5 685" fill="none" stroke="#ffe3a3" stroke-opacity="0.07" stroke-width="1"></path>
+          <path d="M1060 355 A 142.9 165 0 0 1 1060 685" fill="none" stroke="#000000" stroke-opacity="0.16" stroke-width="1.1"></path>
+          <path d="M1058.5 355 A 142.9 165 0 0 1 1058.5 685" fill="none" stroke="#ffe3a3" stroke-opacity="0.07" stroke-width="1"></path>
+          <path d="M1060 355 A 159.4 165 0 0 1 1060 685" fill="none" stroke="#000000" stroke-opacity="0.16" stroke-width="1.1"></path>
+          <path d="M1058.5 355 A 159.4 165 0 0 1 1058.5 685" fill="none" stroke="#ffe3a3" stroke-opacity="0.07" stroke-width="1"></path>
+          <path d="M965.1 385.0 Q 1060 366.0 1154.9 385.0" fill="none" stroke="#000000" stroke-opacity="0.15" stroke-width="1.1"></path>
+          <path d="M932.7 415.0 Q 1060 389.5 1187.3 415.0" fill="none" stroke="#000000" stroke-opacity="0.15" stroke-width="1.1"></path>
+          <path d="M911.5 448.0 Q 1060 418.3 1208.5 448.0" fill="none" stroke="#000000" stroke-opacity="0.15" stroke-width="1.1"></path>
+          <path d="M899.9 480.0 Q 1060 448.0 1220.1 480.0" fill="none" stroke="#000000" stroke-opacity="0.15" stroke-width="1.1"></path>
+          <path d="M905.5 578.0 Q 1060 547.1 1214.5 578.0" fill="none" stroke="#000000" stroke-opacity="0.15" stroke-width="1.1"></path>
+          <path d="M923.0 612.0 Q 1060 584.6 1197.0 612.0" fill="none" stroke="#000000" stroke-opacity="0.15" stroke-width="1.1"></path>
+          <path d="M952.3 645.0 Q 1060 623.5 1167.7 645.0" fill="none" stroke="#000000" stroke-opacity="0.15" stroke-width="1.1"></path>
+          <path d="M991.3 670.0 Q 1060 656.3 1128.7 670.0" fill="none" stroke="#000000" stroke-opacity="0.15" stroke-width="1.1"></path>
+          <path d="M896.5 498.0 Q 1060 465.3 1223.5 498.0 L1222.2 550.0 Q 1060 517.6 897.8 550.0 Z" fill="#0d0905" opacity="1"></path>
+          <path d="M895.9 503.0 Q 1060 470.2 1224.1 503.0 L1225.0 521.0 Q 1060 488.0 895.0 521.0 Z" fill="#f2c26a" opacity="0.72"></path>
+          <path d="M895.1 527.0 Q 1060 494.0 1224.9 527.0 L1223.1 545.0 Q 1060 512.4 896.9 545.0 Z" fill="#e3a84f" opacity="0.55"></path>
+          <path d="M896.5 498.0 Q 1060 465.3 1223.5 498.0 L1222.2 550.0 Q 1060 517.6 897.8 550.0 Z" fill="#ffcf73" opacity="0.18" filter="url(#kcBlur6)"></path>
+          <path d="M895.0 524.0 Q 1060 491.0 1225.0 524.0" fill="none" stroke="#0d0905" stroke-opacity="0.85" stroke-width="4"></path>
+          <line x1="897.7" y1="501.0" x2="897.7" y2="547.0" stroke="#0d0905" stroke-width="0.4"></line>
+          <line x1="898.6" y1="500.9" x2="898.6" y2="546.9" stroke="#0d0905" stroke-width="0.5"></line>
+          <line x1="899.9" y1="500.8" x2="899.9" y2="546.8" stroke="#0d0905" stroke-width="0.5"></line>
+          <line x1="901.9" y1="500.6" x2="901.9" y2="546.6" stroke="#0d0905" stroke-width="0.6"></line>
+          <line x1="904.3" y1="500.5" x2="904.3" y2="546.5" stroke="#0d0905" stroke-width="0.6"></line>
+          <line x1="907.3" y1="500.2" x2="907.3" y2="546.2" stroke="#0d0905" stroke-width="0.7"></line>
+          <line x1="910.8" y1="500.0" x2="910.8" y2="546.0" stroke="#0d0905" stroke-width="0.7"></line>
+          <line x1="914.8" y1="499.7" x2="914.8" y2="545.7" stroke="#0d0905" stroke-width="0.8"></line>
+          <line x1="919.2" y1="499.4" x2="919.2" y2="545.4" stroke="#0d0905" stroke-width="0.9"></line>
+          <line x1="924.2" y1="499.0" x2="924.2" y2="545.0" stroke="#0d0905" stroke-width="0.9"></line>
+          <line x1="929.6" y1="498.6" x2="929.6" y2="544.6" stroke="#0d0905" stroke-width="0.9"></line>
+          <line x1="935.5" y1="498.3" x2="935.5" y2="544.3" stroke="#0d0905" stroke-width="1.0"></line>
+          <line x1="941.8" y1="497.9" x2="941.8" y2="543.9" stroke="#0d0905" stroke-width="1.0"></line>
+          <line x1="948.5" y1="497.5" x2="948.5" y2="543.5" stroke="#0d0905" stroke-width="1.1"></line>
+          <line x1="955.5" y1="497.1" x2="955.5" y2="543.1" stroke="#0d0905" stroke-width="1.1"></line>
+          <line x1="962.9" y1="496.8" x2="962.9" y2="542.8" stroke="#0d0905" stroke-width="1.2"></line>
+          <line x1="970.7" y1="496.4" x2="970.7" y2="542.4" stroke="#0d0905" stroke-width="1.2"></line>
+          <line x1="978.7" y1="496.1" x2="978.7" y2="542.0" stroke="#0d0905" stroke-width="1.2"></line>
+          <line x1="987.1" y1="495.7" x2="987.1" y2="541.7" stroke="#0d0905" stroke-width="1.2"></line>
+          <line x1="995.6" y1="495.4" x2="995.6" y2="541.4" stroke="#0d0905" stroke-width="1.3"></line>
+          <line x1="1004.4" y1="495.2" x2="1004.4" y2="541.2" stroke="#0d0905" stroke-width="1.3"></line>
+          <line x1="1013.4" y1="494.9" x2="1013.4" y2="540.9" stroke="#0d0905" stroke-width="1.3"></line>
+          <line x1="1022.5" y1="494.8" x2="1022.5" y2="540.8" stroke="#0d0905" stroke-width="1.3"></line>
+          <line x1="1031.8" y1="494.6" x2="1031.8" y2="540.6" stroke="#0d0905" stroke-width="1.3"></line>
+          <line x1="1041.1" y1="494.5" x2="1041.1" y2="540.5" stroke="#0d0905" stroke-width="1.3"></line>
+          <line x1="1050.6" y1="494.4" x2="1050.6" y2="540.4" stroke="#0d0905" stroke-width="1.3"></line>
+          <line x1="1060.0" y1="494.4" x2="1060.0" y2="540.4" stroke="#0d0905" stroke-width="1.4"></line>
+          <line x1="1069.4" y1="494.4" x2="1069.4" y2="540.4" stroke="#0d0905" stroke-width="1.3"></line>
+          <line x1="1078.9" y1="494.5" x2="1078.9" y2="540.5" stroke="#0d0905" stroke-width="1.3"></line>
+          <line x1="1088.2" y1="494.6" x2="1088.2" y2="540.6" stroke="#0d0905" stroke-width="1.3"></line>
+          <line x1="1097.5" y1="494.8" x2="1097.5" y2="540.8" stroke="#0d0905" stroke-width="1.3"></line>
+          <line x1="1106.6" y1="494.9" x2="1106.6" y2="540.9" stroke="#0d0905" stroke-width="1.3"></line>
+          <line x1="1115.6" y1="495.2" x2="1115.6" y2="541.2" stroke="#0d0905" stroke-width="1.3"></line>
+          <line x1="1124.4" y1="495.4" x2="1124.4" y2="541.4" stroke="#0d0905" stroke-width="1.3"></line>
+          <line x1="1132.9" y1="495.7" x2="1132.9" y2="541.7" stroke="#0d0905" stroke-width="1.2"></line>
+          <line x1="1141.3" y1="496.1" x2="1141.3" y2="542.0" stroke="#0d0905" stroke-width="1.2"></line>
+          <line x1="1149.3" y1="496.4" x2="1149.3" y2="542.4" stroke="#0d0905" stroke-width="1.2"></line>
+          <line x1="1157.1" y1="496.8" x2="1157.1" y2="542.8" stroke="#0d0905" stroke-width="1.2"></line>
+          <line x1="1164.5" y1="497.1" x2="1164.5" y2="543.1" stroke="#0d0905" stroke-width="1.1"></line>
+          <line x1="1171.5" y1="497.5" x2="1171.5" y2="543.5" stroke="#0d0905" stroke-width="1.1"></line>
+          <line x1="1178.2" y1="497.9" x2="1178.2" y2="543.9" stroke="#0d0905" stroke-width="1.0"></line>
+          <line x1="1184.5" y1="498.3" x2="1184.5" y2="544.3" stroke="#0d0905" stroke-width="1.0"></line>
+          <line x1="1190.4" y1="498.6" x2="1190.4" y2="544.6" stroke="#0d0905" stroke-width="0.9"></line>
+          <line x1="1195.8" y1="499.0" x2="1195.8" y2="545.0" stroke="#0d0905" stroke-width="0.9"></line>
+          <line x1="1200.8" y1="499.4" x2="1200.8" y2="545.4" stroke="#0d0905" stroke-width="0.9"></line>
+          <line x1="1205.2" y1="499.7" x2="1205.2" y2="545.7" stroke="#0d0905" stroke-width="0.8"></line>
+          <line x1="1209.2" y1="500.0" x2="1209.2" y2="546.0" stroke="#0d0905" stroke-width="0.7"></line>
+          <line x1="1212.7" y1="500.2" x2="1212.7" y2="546.2" stroke="#0d0905" stroke-width="0.7"></line>
+          <line x1="1215.7" y1="500.5" x2="1215.7" y2="546.5" stroke="#0d0905" stroke-width="0.6"></line>
+          <line x1="1218.1" y1="500.6" x2="1218.1" y2="546.6" stroke="#0d0905" stroke-width="0.6"></line>
+          <line x1="1220.1" y1="500.8" x2="1220.1" y2="546.8" stroke="#0d0905" stroke-width="0.5"></line>
+          <line x1="1221.4" y1="500.9" x2="1221.4" y2="546.9" stroke="#0d0905" stroke-width="0.5"></line>
+          <line x1="1222.3" y1="501.0" x2="1222.3" y2="547.0" stroke="#0d0905" stroke-width="0.4"></line>
+          <ellipse cx="998" cy="462" rx="58" ry="44" fill="#fff1c9" opacity="0.38" filter="url(#kcBlur20)"></ellipse>
+          <ellipse cx="982" cy="450" rx="16" ry="11" fill="#fff6dc" opacity="0.55" filter="url(#kcBlur6)"></ellipse>
+          <circle cx="1100" cy="530" r="165" fill="none" stroke="#000000" stroke-opacity="0.35" stroke-width="60" filter="url(#kcBlur20)"></circle>
+        </g>
+        <path d="M1142.5 377.1 A 165 165 0 0 1 1186.4 626.1" fill="none" stroke="#f4c876" stroke-opacity="0.45" stroke-width="2"></path>
+        <path d="M917.1 602.5 A 165 165 0 0 1 965.4 384.8" fill="none" stroke="#ffe2a0" stroke-opacity="0.6" stroke-width="2.5"></path>
+      </g>
 
       <!-- Berlin skyline, barely visible -->
       <path d="M0 900 L0 800 L60 800 L60 780 L130 780 L130 810 L190 810 L190 770 L250 770 L250 795 L320 795 L320 760 L360 760 L360 790 L430 790 L430 805 L520 805 L520 770 L540 770 L540 745 Q 600 688 660 745 L660 770 L690 770 L690 800 L780 800 L780 775 L860 775 L860 805 L940 805 L940 790 L1000 790 L1000 900 Z" fill="#0c0b0a"></path>
       <path d="M1080 900 L1080 795 L1150 795 L1150 770 L1230 770 L1230 800 L1300 800 L1300 780 L1380 780 L1380 805 L1440 805 L1440 900 Z" fill="#0c0b0a"></path>
       <rect x="597" y="676" width="6" height="16" fill="#0c0b0a"></rect>
+      <rect x="1000" y="790" width="80" height="110" fill="#0c0b0a"></rect>
       <g fill="#c48e3a" opacity="0.2">
         <rect x="78" y="812" width="3" height="4"></rect>
         <rect x="205" y="790" width="3" height="4"></rect>
@@ -146,44 +282,6 @@ details[open] .kc-plus{transform:rotate(45deg)}
         <rect x="1320" y="798" width="3" height="4"></rect>
       </g>
 
-      <!-- Fernsehturm: shaft -->
-      <path d="M1006 900 L1027 478 L1053 478 L1074 900 Z" fill="url(#kcShaft)"></path>
-      <path d="M1007 900 L1028 478" stroke="#ffdb8f" stroke-width="1.5" opacity="0.55"></path>
-      <path d="M1040 480 L1040 900" stroke="#000000" stroke-width="2" opacity="0.18"></path>
-      <ellipse cx="1040" cy="477" rx="15" ry="3" fill="#0b0806"></ellipse>
-
-      <!-- upper neck, platform and antenna -->
-      <rect x="1031" y="328" width="18" height="40" fill="url(#kcShaft)"></rect>
-      <rect x="1034" y="280" width="12" height="52" fill="url(#kcShaft)"></rect>
-      <polygon points="1038.5,70 1041.5,70 1041.92,105 1038.08,105" fill="#8f2a1c"></polygon>
-      <polygon points="1038.08,105 1041.92,105 1042.33,140 1037.67,140" fill="#c9bca6"></polygon>
-      <polygon points="1037.67,140 1042.33,140 1042.75,175 1037.25,175" fill="#8f2a1c"></polygon>
-      <polygon points="1037.25,175 1042.75,175 1043.17,210 1036.83,210" fill="#c9bca6"></polygon>
-      <polygon points="1036.83,210 1043.17,210 1043.58,245 1036.42,245" fill="#8f2a1c"></polygon>
-      <polygon points="1036.42,245 1043.58,245 1044,280 1036,280" fill="#c9bca6"></polygon>
-      <polygon points="1038.5,70 1041.5,70 1044,280 1036,280" fill="url(#kcAntennaLight)"></polygon>
-
-      <!-- sphere -->
-      <circle cx="1040" cy="420" r="58" fill="url(#kcSphere)"></circle>
-      <g clip-path="url(#kcSphereClip)">
-        <ellipse cx="1040" cy="420" rx="20" ry="58" fill="none" stroke="#000000" stroke-opacity="0.3" stroke-width="1.2"></ellipse>
-        <ellipse cx="1040" cy="420" rx="40" ry="58" fill="none" stroke="#000000" stroke-opacity="0.25" stroke-width="1.2"></ellipse>
-        <line x1="1040" y1="362" x2="1040" y2="478" stroke="#000000" stroke-opacity="0.3" stroke-width="1.2"></line>
-        <line x1="980" y1="384" x2="1100" y2="384" stroke="#000000" stroke-opacity="0.22" stroke-width="1.2"></line>
-        <line x1="980" y1="400" x2="1100" y2="400" stroke="#000000" stroke-opacity="0.22" stroke-width="1.2"></line>
-        <line x1="980" y1="446" x2="1100" y2="446" stroke="#000000" stroke-opacity="0.22" stroke-width="1.2"></line>
-        <line x1="980" y1="462" x2="1100" y2="462" stroke="#000000" stroke-opacity="0.22" stroke-width="1.2"></line>
-        <rect x="980" y="411" width="120" height="20" fill="#120c06"></rect>
-        <rect x="980" y="414" width="120" height="14" fill="url(#kcWin)" opacity="0.9"></rect>
-        <rect x="980" y="411" width="120" height="20" fill="#ffcf73" opacity="0.12" filter="url(#kcBlur3)"></rect>
-        <ellipse cx="1016" cy="396" rx="18" ry="13" fill="#fff1c9" opacity="0.5" filter="url(#kcBlur6)"></ellipse>
-      </g>
-      <circle cx="1040" cy="420" r="58" fill="none" stroke="#ffd889" stroke-opacity="0.18" stroke-width="1"></circle>
-
-      <!-- aviation light -->
-      <circle class="kc-blink" cx="1040" cy="66" r="10" fill="#ff3b2f" opacity="0.35" filter="url(#kcBlur3)"></circle>
-      <circle class="kc-blink" cx="1040" cy="66" r="2.6" fill="#ff5a4a"></circle>
-
       <!-- foreground ground -->
       <rect x="0" y="872" width="1440" height="28" fill="#060606"></rect>
     </svg>
@@ -191,6 +289,7 @@ details[open] .kc-plus{transform:rotate(45deg)}
     <!-- vignette for headline legibility -->
     <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,5,5,0.88) 0%, rgba(5,5,5,0.5) 38%, rgba(5,5,5,0) 62%)"></div>
     <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 200px; background: linear-gradient(180deg, rgba(10,10,10,0) 0%, #0a0a0a 100%)"></div>
+    <div style="position: absolute; left: 0; right: 0; top: 0; height: 220px; background: linear-gradient(180deg, rgba(5,5,5,0.92) 0%, rgba(5,5,5,0.6) 45%, rgba(5,5,5,0) 100%)"></div>
 
     <div style="position: relative; width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 160px 24px 120px; display: flex; flex-direction: column; justify-content: flex-end; gap: 40px">
       <h1 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(56px, 7.5vw, 120px); line-height: 0.9; letter-spacing: 0.005em; color: #ffffff; max-width: 880px">More than just edits.<br>Stories that <span style="color: #a67c2e">move.</span></h1>
