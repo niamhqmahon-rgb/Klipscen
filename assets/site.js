@@ -26,3 +26,20 @@ if (form && sent) {
     sent.hidden = true;
   });
 }
+// Portfolio: a slot with data-youtube="<link or id>" becomes a privacy-friendly YouTube player
+document.querySelectorAll('.kc-yt[data-youtube]').forEach(function (el) {
+  var v = (el.getAttribute('data-youtube') || '').trim();
+  if (!v) return;
+  var m = v.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([A-Za-z0-9_-]{6,})/);
+  var id = m ? m[1] : v;
+  el.innerHTML = '';
+  el.style.border = '0';
+  var f = document.createElement('iframe');
+  f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?rel=0';
+  f.title = 'KlipScen video';
+  f.loading = 'lazy';
+  f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  f.allowFullscreen = true;
+  f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0';
+  el.appendChild(f);
+});

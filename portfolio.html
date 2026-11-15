@@ -11,7 +11,7 @@
 <style>
 body{margin:0;background:#0a0a0a}
 a{color:#f6f3ec}a:hover{color:#ffffff}
-.kc-cta{transition:box-shadow .25s ease,transform .25s ease}.kc-cta:hover{box-shadow:0 8px 26px rgba(166,124,46,.5);transform:translateY(-1px)}.kc-frost:hover{background:rgba(255,255,255,.16) !important;box-shadow:0 8px 26px rgba(0,0,0,.4) !important}
+.kc-cta{transition:box-shadow .25s ease,transform .25s ease}.kc-cta:hover{box-shadow:0 8px 26px rgba(166,124,46,.5);transform:translateY(-1px)}.kc-social{transition:background-color .2s ease,box-shadow .2s ease}.kc-frost:hover{background:rgba(255,255,255,.16) !important;box-shadow:0 8px 26px rgba(0,0,0,.4) !important}
 .kc-nav a{transition:color .2s ease,background-color .2s ease,box-shadow .2s ease,filter .2s ease}
 .kc-nav a.kc-link:hover{color:#a67c2e !important}
 .kc-btn{transition:box-shadow .2s ease,filter .2s ease}
@@ -44,116 +44,29 @@ a{color:#f6f3ec}a:hover{color:#ffffff}
     </div>
   </header>
 
-  <!-- PAGE HERO + FILTERS -->
-  <section style="max-width: 1280px; margin: 0 auto; padding: 72px 24px 48px">
+  <!-- PAGE HERO -->
+  <section style="max-width: 1280px; margin: 0 auto; padding: 72px 24px 56px">
     <h1 style="margin: 0; font-family: 'Proxima Nova', proxima-nova, Figtree, system-ui, sans-serif; font-weight: 800; font-size: clamp(44px, 6.8vw, 103px); line-height: 0.98; color: #ffffff; letter-spacing: -0.025em">Our <span style="color: #d8324f">portfolio.</span></h1>
     <div style="margin-top: 32px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
-      <p style="margin: 0; max-width: 560px; font-size: 18px; color: #b5b0a6">From concept to final cut, projects that show our craft. Filter by format to find work like yours.</p>
-      <div role="group" aria-label="Filter by format" style="display: flex; flex-wrap: wrap; gap: 8px">
-        <button type="button" class="kc-chip kc-filter" data-filter="All" aria-pressed="true">All</button>
-<button type="button" class="kc-chip kc-filter" data-filter="Short form" aria-pressed="false">Short form</button>
-<button type="button" class="kc-chip kc-filter" data-filter="Long form" aria-pressed="false">Long form</button>
-<button type="button" class="kc-chip kc-filter" data-filter="Brand" aria-pressed="false">Brand</button>
-      </div>
+      <p style="margin: 0; max-width: 560px; font-size: 18px; color: #b5b0a6">From concept to final cut, a selection of our edits. Follow us for new work every week.</p>
+      <nav aria-label="KlipScen on social media" style="display: flex; flex-wrap: wrap; gap: 10px">
+        <a class="kc-frost kc-social" href="#" data-placeholder="YouTube channel link" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #ffffff; font-size: 15px; font-weight: 600; text-decoration: none"><svg width="22" height="16" viewBox="0 0 28 20" aria-hidden="true"><rect x="0" y="0" width="28" height="20" rx="5" fill="#e0405c"></rect><path d="M11 6 L19 10 L11 14 Z" fill="#ffffff"></path></svg>YouTube</a>
+        <a class="kc-frost kc-social" href="#" data-placeholder="TikTok profile link" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #ffffff; font-size: 15px; font-weight: 600; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.2a3.8 3.8 0 1 1-3.8-3.8" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"></path><path d="M14 3c.4 2.8 2.4 4.6 5 4.8" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"></path></svg>TikTok</a>
+        <a class="kc-frost kc-social" href="#" data-placeholder="Instagram profile link" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #ffffff; font-size: 15px; font-weight: 600; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#ffffff" stroke-width="1.8" fill="none"></rect><circle cx="12" cy="12" r="4" stroke="#ffffff" stroke-width="1.8" fill="none"></circle><circle cx="17.3" cy="6.7" r="1.2" fill="#ffffff"></circle></svg>Instagram</a>
+      </nav>
     </div>
   </section>
 
-  <!-- GRID -->
+  <!-- VIDEOS: YouTube slots -->
   <section style="max-width: 1280px; margin: 0 auto; padding: 0 24px 96px">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 20px">
-      
-        <a href="contact.html" class="kc-tile kc-work" data-tag="Short form" style="display: block; text-decoration: none; border-radius: 24px; overflow: hidden; background: #161616; border: 1px solid rgba(255,255,255,0.08)">
-          <div style="position: relative; aspect-ratio: 16 / 10; background: #1f1f1f; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 14px)">
-          </div>
-          <div style="padding: 24px 26px 28px">
-            <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
-              <h2 style="margin: 0; font-family: 'Proxima Nova', proxima-nova, Figtree, system-ui, sans-serif; font-weight: 800; font-size: 22px; line-height: 1.0; color: #ffffff; letter-spacing: -0.025em">Fast Paced Cut</h2>
-            </div>
-            <p style="margin: 10px 0 0; font-size: 15px; color: #b5b0a6">Quick edits and high energy to keep the viewer’s attention locked.</p>
-            <div style="margin-top: 16px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #a67c2e">Want this style?
-              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="#a67c2e" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </div>
-          </div>
-        </a>
-      
-
-        <a href="contact.html" class="kc-tile kc-work" data-tag="Short form" style="display: block; text-decoration: none; border-radius: 24px; overflow: hidden; background: #161616; border: 1px solid rgba(255,255,255,0.08)">
-          <div style="position: relative; aspect-ratio: 16 / 10; background: #1f1f1f; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 14px)">
-          </div>
-          <div style="padding: 24px 26px 28px">
-            <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
-              <h2 style="margin: 0; font-family: 'Proxima Nova', proxima-nova, Figtree, system-ui, sans-serif; font-weight: 800; font-size: 22px; line-height: 1.0; color: #ffffff; letter-spacing: -0.025em">Text Punch Style</h2>
-            </div>
-            <p style="margin: 10px 0 0; font-size: 15px; color: #b5b0a6">Bold, animated text to highlight emotions, jokes or important info.</p>
-            <div style="margin-top: 16px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #a67c2e">Want this style?
-              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="#a67c2e" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </div>
-          </div>
-        </a>
-      
-
-        <a href="contact.html" class="kc-tile kc-work" data-tag="Brand" style="display: block; text-decoration: none; border-radius: 24px; overflow: hidden; background: #161616; border: 1px solid rgba(255,255,255,0.08)">
-          <div style="position: relative; aspect-ratio: 16 / 10; background: #1f1f1f; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 14px)">
-          </div>
-          <div style="padding: 24px 26px 28px">
-            <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
-              <h2 style="margin: 0; font-family: 'Proxima Nova', proxima-nova, Figtree, system-ui, sans-serif; font-weight: 800; font-size: 22px; line-height: 1.0; color: #ffffff; letter-spacing: -0.025em">Seamless Transitions</h2>
-            </div>
-            <p style="margin: 10px 0 0; font-size: 15px; color: #b5b0a6">Smooth flow between scenes using clever in camera or editing transitions.</p>
-            <div style="margin-top: 16px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #a67c2e">Want this style?
-              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="#a67c2e" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </div>
-          </div>
-        </a>
-      
-
-        <a href="contact.html" class="kc-tile kc-work" data-tag="Short form" style="display: block; text-decoration: none; border-radius: 24px; overflow: hidden; background: #161616; border: 1px solid rgba(255,255,255,0.08)">
-          <div style="position: relative; aspect-ratio: 16 / 10; background: #1f1f1f; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 14px)">
-          </div>
-          <div style="padding: 24px 26px 28px">
-            <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
-              <h2 style="margin: 0; font-family: 'Proxima Nova', proxima-nova, Figtree, system-ui, sans-serif; font-weight: 800; font-size: 22px; line-height: 1.0; color: #ffffff; letter-spacing: -0.025em">Rhythmic Sync</h2>
-            </div>
-            <p style="margin: 10px 0 0; font-size: 15px; color: #b5b0a6">Every cut and motion perfectly timed to the beat of the music.</p>
-            <div style="margin-top: 16px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #a67c2e">Want this style?
-              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="#a67c2e" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </div>
-          </div>
-        </a>
-      
-
-        <a href="contact.html" class="kc-tile kc-work" data-tag="Brand" style="display: block; text-decoration: none; border-radius: 24px; overflow: hidden; background: #161616; border: 1px solid rgba(255,255,255,0.08)">
-          <div style="position: relative; aspect-ratio: 16 / 10; background: #1f1f1f; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 14px)">
-          </div>
-          <div style="padding: 24px 26px 28px">
-            <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
-              <h2 style="margin: 0; font-family: 'Proxima Nova', proxima-nova, Figtree, system-ui, sans-serif; font-weight: 800; font-size: 22px; line-height: 1.0; color: #ffffff; letter-spacing: -0.025em">Retro Vintage</h2>
-            </div>
-            <p style="margin: 10px 0 0; font-size: 15px; color: #b5b0a6">Old school vibes using grain, film burns and nostalgic music.</p>
-            <div style="margin-top: 16px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #a67c2e">Want this style?
-              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="#a67c2e" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </div>
-          </div>
-        </a>
-      
-
-        <a href="contact.html" class="kc-tile kc-work" data-tag="Long form" style="display: block; text-decoration: none; border-radius: 24px; overflow: hidden; background: #161616; border: 1px solid rgba(255,255,255,0.08)">
-          <div style="position: relative; aspect-ratio: 16 / 10; background: #1f1f1f; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 14px)">
-          </div>
-          <div style="padding: 24px 26px 28px">
-            <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
-              <h2 style="margin: 0; font-family: 'Proxima Nova', proxima-nova, Figtree, system-ui, sans-serif; font-weight: 800; font-size: 22px; line-height: 1.0; color: #ffffff; letter-spacing: -0.025em">Long Form Story</h2>
-            </div>
-            <p style="margin: 10px 0 0; font-size: 15px; color: #b5b0a6">Story driven edits with B roll, graphics and retention hooks.</p>
-            <div style="margin-top: 16px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #a67c2e">Want this style?
-              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="#a67c2e" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </div>
-          </div>
-        </a>
-      
+    <figure style="margin: 0"><div class="kc-yt" data-youtube="" style="position: relative; aspect-ratio: 16 / 9; border-radius: 22px; overflow: hidden; background: #161616; border: 1px dashed rgba(255,255,255,0.22); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px"><svg width="64" height="45" viewBox="0 0 28 20" aria-hidden="true"><rect x="0" y="0" width="28" height="20" rx="5" fill="#e0405c"></rect><path d="M11 6 L19 10 L11 14 Z" fill="#ffffff"></path></svg><span style="font-size: 14px; color: #a39e94">[Paste YouTube video link]</span></div><figcaption style="margin-top: 14px; font-weight: 700; font-size: 18px; color: #ffffff">[Video title]</figcaption></figure>
+    <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 40px 24px">
+      <figure style="margin: 0"><div class="kc-yt" data-youtube="" style="position: relative; aspect-ratio: 16 / 9; border-radius: 22px; overflow: hidden; background: #161616; border: 1px dashed rgba(255,255,255,0.22); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px"><svg width="48" height="34" viewBox="0 0 28 20" aria-hidden="true"><rect x="0" y="0" width="28" height="20" rx="5" fill="#e0405c"></rect><path d="M11 6 L19 10 L11 14 Z" fill="#ffffff"></path></svg><span style="font-size: 14px; color: #a39e94">[Paste YouTube video link]</span></div><figcaption style="margin-top: 14px; font-weight: 700; font-size: 18px; color: #ffffff">[Video title]</figcaption></figure>
+      <figure style="margin: 0"><div class="kc-yt" data-youtube="" style="position: relative; aspect-ratio: 16 / 9; border-radius: 22px; overflow: hidden; background: #161616; border: 1px dashed rgba(255,255,255,0.22); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px"><svg width="48" height="34" viewBox="0 0 28 20" aria-hidden="true"><rect x="0" y="0" width="28" height="20" rx="5" fill="#e0405c"></rect><path d="M11 6 L19 10 L11 14 Z" fill="#ffffff"></path></svg><span style="font-size: 14px; color: #a39e94">[Paste YouTube video link]</span></div><figcaption style="margin-top: 14px; font-weight: 700; font-size: 18px; color: #ffffff">[Video title]</figcaption></figure>
+      <figure style="margin: 0"><div class="kc-yt" data-youtube="" style="position: relative; aspect-ratio: 16 / 9; border-radius: 22px; overflow: hidden; background: #161616; border: 1px dashed rgba(255,255,255,0.22); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px"><svg width="48" height="34" viewBox="0 0 28 20" aria-hidden="true"><rect x="0" y="0" width="28" height="20" rx="5" fill="#e0405c"></rect><path d="M11 6 L19 10 L11 14 Z" fill="#ffffff"></path></svg><span style="font-size: 14px; color: #a39e94">[Paste YouTube video link]</span></div><figcaption style="margin-top: 14px; font-weight: 700; font-size: 18px; color: #ffffff">[Video title]</figcaption></figure>
+      <figure style="margin: 0"><div class="kc-yt" data-youtube="" style="position: relative; aspect-ratio: 16 / 9; border-radius: 22px; overflow: hidden; background: #161616; border: 1px dashed rgba(255,255,255,0.22); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px"><svg width="48" height="34" viewBox="0 0 28 20" aria-hidden="true"><rect x="0" y="0" width="28" height="20" rx="5" fill="#e0405c"></rect><path d="M11 6 L19 10 L11 14 Z" fill="#ffffff"></path></svg><span style="font-size: 14px; color: #a39e94">[Paste YouTube video link]</span></div><figcaption style="margin-top: 14px; font-weight: 700; font-size: 18px; color: #ffffff">[Video title]</figcaption></figure>
     </div>
   </section>
-
 
   <!-- CTA (off-white sheet) -->
   <section style="background: #f6f3ec; color: #0a0a0a; border-radius: 40px 40px 0 0">

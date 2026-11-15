@@ -15,3 +15,8 @@ Static preview of the new KlipScen site: plain HTML, CSS and a little vanilla JS
 - Preview locally: `python3 -m http.server 8000` in this folder, then open http://localhost:8000.
 
 Open items: real showreel and project thumbnails, WhatsApp, Instagram and privacy links, and the bracketed placeholders (turnaround, revision rounds).
+
+## Adding portfolio videos and social links
+
+- In `portfolio.html`, each video slot is a `<div class="kc-yt" data-youtube="">`. Put a YouTube link or video ID between the quotes, for example `data-youtube="https://youtu.be/VIDEO_ID"`, and the slot becomes a player. Replace `[Video title]` with the title.
+- The YouTube, TikTok and Instagram buttons in `portfolio.html` use `href="#"` as placeholders: replace each `#` with the profile link.
