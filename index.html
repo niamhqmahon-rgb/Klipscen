@@ -38,13 +38,13 @@ details[open] .kc-plus{transform:rotate(45deg)}
 .kc-rb-shine{stroke-dasharray:120 1900;stroke-dashoffset:120;opacity:0;animation:kcShine 4.5s linear 3.1s infinite}
 .kc-rb-arrow{offset-path:path("M 20 90 C 70 90 110 90 150 90 C 240 90 370 10 300 25 C 220 40 200 150 300 130 C 360 118 390 90 450 90 C 540 90 670 10 600 25 C 520 40 500 150 600 130 C 660 118 690 90 750 90 C 840 90 970 10 900 25 C 820 40 800 150 900 130 C 960 118 990 90 1050 90 C 1100 90 1140 90 1180 90");offset-rotate:auto;offset-distance:0%;opacity:0;animation:kcMove 4.5s linear 3.1s infinite}
 .kc-rb-node{transform-box:fill-box;transform-origin:center;animation:kcPulse 2.4s ease-in-out infinite}
-@media (max-width: 640px){.kc-scene{width:140% !important}.kc-hero-shade{background:linear-gradient(180deg, rgba(5,5,5,0.15) 0%, rgba(5,5,5,0.55) 45%, rgba(5,5,5,0.9) 70%, rgba(5,5,5,0.95) 100%) !important}}
+@media (max-width: 640px){.kc-scene{width:100% !important;top:auto !important;bottom:0 !important;height:64% !important;animation:none !important;-webkit-mask-image:linear-gradient(to bottom, transparent 0%, #000 22%);mask-image:linear-gradient(to bottom, transparent 0%, #000 22%)}.kc-hero-shade{background:linear-gradient(180deg, rgba(5,5,5,0.94) 0%, rgba(5,5,5,0.82) 38%, rgba(5,5,5,0.15) 62%, rgba(5,5,5,0) 100%) !important}.kc-hero-content{padding-top:230px !important}}
 /* motion graphic entrance: the tower rushes into frame, settles by about 2.3s */
-.kc-develop{transform-box:view-box;transform-origin:1525px 546px;opacity:0;animation:kcRush 1.05s cubic-bezier(.16,.84,.24,1) .12s forwards}
+.kc-develop{transform-box:view-box;transform-origin:1420px 700px;opacity:0;animation:kcRush 1.05s cubic-bezier(.16,.84,.24,1) .12s forwards}
 @keyframes kcRush{0%{opacity:0;transform:translate(320px,460px) scale(.18) rotate(-14deg);filter:blur(16px) brightness(1.7)}14%{opacity:1}62%{transform:translate(-14px,-8px) scale(1.07) rotate(1.2deg);filter:blur(4px) brightness(1.15)}82%{transform:translate(4px,2px) scale(.985) rotate(-.3deg);filter:blur(0) brightness(1)}100%{opacity:1;transform:none;filter:none}}
 .kc-zips line{stroke-dasharray:160 2200;stroke-dashoffset:0;opacity:0;animation:kcZip .62s cubic-bezier(.3,0,.2,1) forwards}
 @keyframes kcZip{0%{stroke-dashoffset:0;opacity:0}20%{opacity:1}100%{stroke-dashoffset:-1450;opacity:0}}
-.kc-flare{transform-box:view-box;transform-origin:1465px 396px;opacity:0;animation:kcFlare .9s cubic-bezier(.4,0,.2,1) .95s forwards}
+.kc-flare{transform-box:view-box;transform-origin:1350px 470px;opacity:0;animation:kcFlare .9s cubic-bezier(.4,0,.2,1) .95s forwards}
 @keyframes kcFlare{0%{opacity:0;transform:translateX(-160px) scaleX(.6)}30%{opacity:1}100%{opacity:0;transform:translateX(220px) scaleX(1.15)}}
 .kc-grain{animation:kcGrainShift .5s steps(4) infinite}
 @keyframes kcGrainShift{0%{transform:translate(0,0)}25%{transform:translate(-60px,40px)}50%{transform:translate(50px,-30px)}75%{transform:translate(-30px,-60px)}100%{transform:translate(0,0)}}
@@ -82,11 +82,21 @@ details[open] .kc-plus{transform:rotate(45deg)}
   @keyframes kcPopIn{0%{opacity:0;transform:perspective(1200px) translateY(90px) rotateX(16deg) scale(.9)}70%{opacity:1}100%{opacity:1;transform:none}}
 }
 @media (prefers-reduced-motion: reduce){.kc-svc-card,[class*="kc-mg-"]{animation:none !important;opacity:1 !important;transform:none !important}}
+/* depth: drifting dust, light beam, scroll push toward the tower */
+.kc-dust circle{animation:kcDust 14s linear infinite}
+.kc-dust-near circle{animation-duration:9s}
+@keyframes kcDust{0%{transform:translate(0,0);opacity:0}12%{opacity:1}88%{opacity:1}100%{transform:translate(-60px,-180px);opacity:0}}
+.kc-beam{animation:kcBeamPulse 7s ease-in-out infinite}@keyframes kcBeamPulse{0%,100%{opacity:.75}50%{opacity:1}}
+@supports (animation-timeline: scroll()){
+  .kc-scene{transform-origin:74% 60%;animation:kcPush linear both;animation-timeline:scroll();animation-range:0px 900px}
+  @keyframes kcPush{to{transform:scale(1.22) translateY(30px)}}
+}
+@media (prefers-reduced-motion: reduce){.kc-dust circle,.kc-beam,.kc-scene{animation:none !important}}
 @keyframes kcIn{to{opacity:1}}@keyframes kcOut{to{opacity:0}}
 @keyframes kcDraw2{to{stroke-dashoffset:0}}
-.kc-kenburns{transform-box:view-box;transform-origin:1525px 546px;animation:kcKen 26s ease-in-out infinite alternate}
-.kc-orbit-sage{transform-box:view-box;transform-origin:1525px 546px;animation:kcOrbit 16s linear infinite}
-.kc-orbit-cherry{transform-box:view-box;transform-origin:1525px 546px;animation:kcOrbit 23s linear infinite reverse}
+.kc-kenburns{transform-box:view-box;transform-origin:1420px 700px;animation:kcKen 26s ease-in-out infinite alternate}
+.kc-orbit-sage{transform-box:view-box;transform-origin:1420px 700px;animation:kcOrbit 16s linear infinite}
+.kc-orbit-cherry{transform-box:view-box;transform-origin:1420px 700px;animation:kcOrbit 23s linear infinite reverse}
 .kc-sweep{transform-box:view-box;animation:kcSweep 7.5s cubic-bezier(.45,0,.25,1) infinite}
 .kc-glint{transform-box:fill-box;transform-origin:center;opacity:0;animation:kcGlint 4.4s ease-in-out infinite}
 @keyframes kcKen{from{transform:scale(1)}to{transform:scale(1.06) translate(-14px,6px)}}
@@ -130,9 +140,9 @@ details[open] .kc-plus{transform:rotate(45deg)}
 
   <!-- HERO: night photo of the Fernsehturm, graded gold -->
   <section style="position: relative; min-height: 880px; overflow: hidden; background: #050505; display: flex">
-    <svg class="kc-scene" viewBox="0 0 1920 1176" preserveAspectRatio="xMaxYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block" role="img" aria-label="The Berlin TV tower at night, lit in golden light with sage and cherry reflections">
+    <svg class="kc-scene" viewBox="0 0 1920 1176" preserveAspectRatio="xMaxYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block" role="img" aria-label="The Berlin TV tower at night, lit by warm golden light">
       <defs>
-        <mask id="kcKugel" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1176"><circle cx="1524.7" cy="546.0" r="263.0" fill="#ffffff"></circle><polygon points="1488,640 1505,600 1560,578 1640,572 1700,590 1960,1060 1960,1200 1630,1200" fill="#000000"></polygon></mask>
+        <filter id="kcMaskSoft" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="10"></feGaussianBlur></filter><mask id="kcKugel" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1176"><g filter="url(#kcMaskSoft)"><circle cx="1420" cy="700" r="394" fill="#ffffff"></circle><polygon points="1357,868 1638,868 2076,1600 1572,1600" fill="#000000"></polygon></g></mask>
         <radialGradient id="kcSageGlow">
           <stop offset="0" stop-color="#a9cdb8" stop-opacity="0.7"></stop>
           <stop offset="0.5" stop-color="#52645a" stop-opacity="0.45"></stop>
@@ -148,52 +158,115 @@ details[open] .kc-plus{transform:rotate(45deg)}
           <stop offset="0.5" stop-color="#fff6dc" stop-opacity="0.6"></stop>
           <stop offset="1" stop-color="#ffffff" stop-opacity="0"></stop>
         </linearGradient>
-        <filter id="kcTraceGlow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
         <filter id="kcFlareBlur" x="-10%" y="-200%" width="120%" height="500%"><feGaussianBlur stdDeviation="6"></feGaussianBlur></filter>
         <linearGradient id="kcFlareH" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b5193a" stop-opacity="0"></stop><stop offset="0.35" stop-color="#ff5a76" stop-opacity="0.55"></stop><stop offset="0.5" stop-color="#fff3d6" stop-opacity="1"></stop><stop offset="0.65" stop-color="#f0c06a" stop-opacity="0.55"></stop><stop offset="1" stop-color="#a67c2e" stop-opacity="0"></stop></linearGradient>
         <radialGradient id="kcFlareCore"><stop offset="0" stop-color="#ffffff" stop-opacity="1"></stop><stop offset="0.35" stop-color="#ffe6b0" stop-opacity="0.6"></stop><stop offset="1" stop-color="#ffe6b0" stop-opacity="0"></stop></radialGradient>
         <filter id="kcGrain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter>
+        <linearGradient id="kcBeam" gradientUnits="userSpaceOnUse" x1="300" y1="1176" x2="1420" y2="700"><stop offset="0" stop-color="#f0c06a" stop-opacity="0"></stop><stop offset="0.6" stop-color="#f0c06a" stop-opacity="0.10"></stop><stop offset="1" stop-color="#ffd98f" stop-opacity="0.22"></stop></linearGradient>
+        <filter id="kcBeamBlur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="28"></feGaussianBlur></filter>
+        <filter id="kcDustBlur" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="2.4"></feGaussianBlur></filter>
+        <linearGradient id="kcHaze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a130a" stop-opacity="0"></stop><stop offset="1" stop-color="#2a1d0c" stop-opacity="0.75"></stop></linearGradient>
       </defs>
       <g class="kc-kenburns">
         <g class="kc-zips" aria-hidden="true" stroke-linecap="round" opacity="0.9">
-          <line x1="1815" y1="546" x2="3225" y2="546" stroke="#ffffff" stroke-width="1.5" style="animation-delay: 0.080s"></line>
-          <line x1="1794" y1="655" x2="3101" y2="1183" stroke="#f6d48a" stroke-width="2.5" style="animation-delay: 0.115s"></line>
-          <line x1="1776" y1="691" x2="2997" y2="1396" stroke="#f6d48a" stroke-width="1.5" style="animation-delay: 0.150s"></line>
-          <line x1="1703" y1="775" x2="2571" y2="1886" stroke="#ffffff" stroke-width="2.5" style="animation-delay: 0.185s"></line>
-          <line x1="1670" y1="797" x2="2375" y2="2018" stroke="#f6d48a" stroke-width="1.5" style="animation-delay: 0.220s"></line>
-          <line x1="1565" y1="833" x2="1761" y2="2229" stroke="#f6d48a" stroke-width="2.5" style="animation-delay: 0.080s"></line>
-          <line x1="1525" y1="836" x2="1525" y2="2246" stroke="#ffffff" stroke-width="1.5" style="animation-delay: 0.115s"></line>
-          <line x1="1416" y1="815" x2="888" y2="2122" stroke="#f6d48a" stroke-width="2.5" style="animation-delay: 0.150s"></line>
-          <line x1="1380" y1="797" x2="675" y2="2018" stroke="#f6d48a" stroke-width="1.5" style="animation-delay: 0.185s"></line>
-          <line x1="1296" y1="725" x2="185" y2="1593" stroke="#ffffff" stroke-width="2.5" style="animation-delay: 0.220s"></line>
-          <line x1="1274" y1="691" x2="52" y2="1396" stroke="#f6d48a" stroke-width="1.5" style="animation-delay: 0.080s"></line>
-          <line x1="1238" y1="586" x2="-159" y2="783" stroke="#f6d48a" stroke-width="2.5" style="animation-delay: 0.115s"></line>
-          <line x1="1235" y1="546" x2="-175" y2="546" stroke="#ffffff" stroke-width="1.5" style="animation-delay: 0.150s"></line>
-          <line x1="1256" y1="437" x2="-52" y2="-91" stroke="#f6d48a" stroke-width="2.5" style="animation-delay: 0.185s"></line>
-          <line x1="1274" y1="401" x2="52" y2="-304" stroke="#f6d48a" stroke-width="1.5" style="animation-delay: 0.220s"></line>
-          <line x1="1346" y1="317" x2="478" y2="-794" stroke="#ffffff" stroke-width="2.5" style="animation-delay: 0.080s"></line>
-          <line x1="1380" y1="295" x2="675" y2="-926" stroke="#f6d48a" stroke-width="1.5" style="animation-delay: 0.115s"></line>
-          <line x1="1484" y1="259" x2="1288" y2="-1137" stroke="#f6d48a" stroke-width="2.5" style="animation-delay: 0.150s"></line>
-          <line x1="1525" y1="256" x2="1525" y2="-1154" stroke="#ffffff" stroke-width="1.5" style="animation-delay: 0.185s"></line>
-          <line x1="1633" y1="277" x2="2162" y2="-1030" stroke="#f6d48a" stroke-width="2.5" style="animation-delay: 0.220s"></line>
-          <line x1="1670" y1="295" x2="2375" y2="-926" stroke="#f6d48a" stroke-width="1.5" style="animation-delay: 0.080s"></line>
-          <line x1="1753" y1="367" x2="2864" y2="-501" stroke="#ffffff" stroke-width="2.5" style="animation-delay: 0.115s"></line>
-          <line x1="1776" y1="401" x2="2997" y2="-304" stroke="#f6d48a" stroke-width="1.5" style="animation-delay: 0.150s"></line>
-          <line x1="1812" y1="506" x2="3208" y2="309" stroke="#f6d48a" stroke-width="2.5" style="animation-delay: 0.185s"></line>
+          <line x1="1850" y1="700" x2="3420" y2="700" stroke="#ffffff" stroke-width="1.5" style="animation-delay: 0.080s"></line>
+          <line x1="1819" y1="861" x2="3274" y2="1449" stroke="#f6d48a" stroke-width="2.5" style="animation-delay: 0.115s"></line>
+          <line x1="1792" y1="915" x2="3152" y2="1700" stroke="#f6d48a" stroke-width="1.5" style="animation-delay: 0.150s"></line>
+          <line x1="1685" y1="1039" x2="2651" y2="2276" stroke="#ffffff" stroke-width="2.5" style="animation-delay: 0.185s"></line>
+          <line x1="1635" y1="1072" x2="2420" y2="2432" stroke="#f6d48a" stroke-width="1.5" style="animation-delay: 0.220s"></line>
+          <line x1="1480" y1="1126" x2="1698" y2="2681" stroke="#f6d48a" stroke-width="2.5" style="animation-delay: 0.080s"></line>
+          <line x1="1420" y1="1130" x2="1420" y2="2700" stroke="#ffffff" stroke-width="1.5" style="animation-delay: 0.115s"></line>
+          <line x1="1259" y1="1099" x2="671" y2="2554" stroke="#f6d48a" stroke-width="2.5" style="animation-delay: 0.150s"></line>
+          <line x1="1205" y1="1072" x2="420" y2="2432" stroke="#f6d48a" stroke-width="1.5" style="animation-delay: 0.185s"></line>
+          <line x1="1081" y1="965" x2="-156" y2="1931" stroke="#ffffff" stroke-width="2.5" style="animation-delay: 0.220s"></line>
+          <line x1="1048" y1="915" x2="-312" y2="1700" stroke="#f6d48a" stroke-width="1.5" style="animation-delay: 0.080s"></line>
+          <line x1="994" y1="760" x2="-561" y2="978" stroke="#f6d48a" stroke-width="2.5" style="animation-delay: 0.115s"></line>
+          <line x1="990" y1="700" x2="-580" y2="700" stroke="#ffffff" stroke-width="1.5" style="animation-delay: 0.150s"></line>
+          <line x1="1021" y1="539" x2="-434" y2="-49" stroke="#f6d48a" stroke-width="2.5" style="animation-delay: 0.185s"></line>
+          <line x1="1048" y1="485" x2="-312" y2="-300" stroke="#f6d48a" stroke-width="1.5" style="animation-delay: 0.220s"></line>
+          <line x1="1155" y1="361" x2="189" y2="-876" stroke="#ffffff" stroke-width="2.5" style="animation-delay: 0.080s"></line>
+          <line x1="1205" y1="328" x2="420" y2="-1032" stroke="#f6d48a" stroke-width="1.5" style="animation-delay: 0.115s"></line>
+          <line x1="1360" y1="274" x2="1142" y2="-1281" stroke="#f6d48a" stroke-width="2.5" style="animation-delay: 0.150s"></line>
+          <line x1="1420" y1="270" x2="1420" y2="-1300" stroke="#ffffff" stroke-width="1.5" style="animation-delay: 0.185s"></line>
+          <line x1="1581" y1="301" x2="2169" y2="-1154" stroke="#f6d48a" stroke-width="2.5" style="animation-delay: 0.220s"></line>
+          <line x1="1635" y1="328" x2="2420" y2="-1032" stroke="#f6d48a" stroke-width="1.5" style="animation-delay: 0.080s"></line>
+          <line x1="1759" y1="435" x2="2996" y2="-531" stroke="#ffffff" stroke-width="2.5" style="animation-delay: 0.115s"></line>
+          <line x1="1792" y1="485" x2="3152" y2="-300" stroke="#f6d48a" stroke-width="1.5" style="animation-delay: 0.150s"></line>
+          <line x1="1846" y1="640" x2="3401" y2="422" stroke="#f6d48a" stroke-width="2.5" style="animation-delay: 0.185s"></line>
         </g>
-        <image class="kc-develop" href="assets/images/hero-fernsehturm-v3.jpg" x="0" y="0" width="1920" height="1176" preserveAspectRatio="none"></image>
+        <image class="kc-develop" href="assets/images/hero-fernsehturm-v4.jpg" x="0" y="0" width="1920" height="1176" preserveAspectRatio="none"></image>
         <g class="kc-lights">
+        <polygon class="kc-beam" points="120,1176 620,1176 1480,740 1260,580" fill="url(#kcBeam)" filter="url(#kcBeamBlur)" style="mix-blend-mode: screen"></polygon>
         <g mask="url(#kcKugel)">
-          <g class="kc-orbit-sage"><circle cx="1527" cy="338" r="200" fill="url(#kcSageGlow)" style="mix-blend-mode: screen"></circle></g>
-          <g class="kc-orbit-cherry"><circle cx="1527" cy="753" r="180" fill="url(#kcCherryGlow)" style="mix-blend-mode: screen"></circle></g>
-          <g class="kc-sweep"><rect x="1145" y="241" width="110" height="604" fill="url(#kcSheen)" style="mix-blend-mode: overlay"></rect></g>
+          <g class="kc-orbit-sage"><circle cx="1420" cy="388" r="304" fill="url(#kcSageGlow)" style="mix-blend-mode: screen"></circle></g>
+          <g class="kc-orbit-cherry"><circle cx="1420" cy="1020" r="272" fill="url(#kcCherryGlow)" style="mix-blend-mode: screen"></circle></g>
+          <g class="kc-sweep"><rect x="860" y="240" width="150" height="920" fill="url(#kcSheen)" style="mix-blend-mode: overlay"></rect></g>
         </g>
         </g>
         <g class="kc-flare" aria-hidden="true" style="mix-blend-mode: screen">
-          <ellipse cx="1464.7" cy="396.0" rx="900" ry="5" fill="url(#kcFlareH)"></ellipse>
-          <ellipse cx="1464.7" cy="396.0" rx="420" ry="16" fill="url(#kcFlareH)" opacity="0.5" filter="url(#kcFlareBlur)"></ellipse>
-          <circle cx="1464.7" cy="396.0" r="38" fill="url(#kcFlareCore)"></circle>
+          <ellipse cx="1350" cy="470" rx="1100" ry="6" fill="url(#kcFlareH)"></ellipse>
+          <ellipse cx="1350" cy="470" rx="520" ry="20" fill="url(#kcFlareH)" opacity="0.5" filter="url(#kcFlareBlur)"></ellipse>
+          <circle cx="1350" cy="470" r="46" fill="url(#kcFlareCore)"></circle>
         </g>
+      </g>
+      <rect x="0" y="880" width="1920" height="296" fill="url(#kcHaze)"></rect>
+      <g class="kc-dust kc-dust-far">
+          <circle cx="953" cy="243" r="1.3" fill="#f3d595" opacity="0.24" style="animation-delay: -7.5s"></circle>
+          <circle cx="1012" cy="143" r="1.2" fill="#f3d595" opacity="0.23" style="animation-delay: -6.1s"></circle>
+          <circle cx="598" cy="178" r="1.1" fill="#f3d595" opacity="0.41" style="animation-delay: -1.7s"></circle>
+          <circle cx="813" cy="758" r="1.6" fill="#f3d595" opacity="0.35" style="animation-delay: -5.6s"></circle>
+          <circle cx="1867" cy="130" r="1.5" fill="#f3d595" opacity="0.29" style="animation-delay: -2.0s"></circle>
+          <circle cx="665" cy="413" r="1.5" fill="#f3d595" opacity="0.27" style="animation-delay: -8.1s"></circle>
+          <circle cx="1394" cy="482" r="1.2" fill="#f3d595" opacity="0.24" style="animation-delay: -0.8s"></circle>
+          <circle cx="788" cy="815" r="1.1" fill="#f3d595" opacity="0.30" style="animation-delay: -8.2s"></circle>
+          <circle cx="1134" cy="404" r="1.4" fill="#f3d595" opacity="0.38" style="animation-delay: -3.4s"></circle>
+          <circle cx="1304" cy="647" r="1.5" fill="#f3d595" opacity="0.39" style="animation-delay: -4.0s"></circle>
+          <circle cx="1872" cy="208" r="1.1" fill="#f3d595" opacity="0.40" style="animation-delay: -2.1s"></circle>
+          <circle cx="1185" cy="122" r="1.3" fill="#f3d595" opacity="0.40" style="animation-delay: -8.0s"></circle>
+          <circle cx="1726" cy="419" r="1.4" fill="#f3d595" opacity="0.36" style="animation-delay: -8.1s"></circle>
+          <circle cx="1139" cy="987" r="1.6" fill="#f3d595" opacity="0.33" style="animation-delay: -9.3s"></circle>
+          <circle cx="585" cy="838" r="1.3" fill="#f3d595" opacity="0.45" style="animation-delay: -11.5s"></circle>
+          <circle cx="898" cy="497" r="1.3" fill="#f3d595" opacity="0.23" style="animation-delay: -6.5s"></circle>
+          <circle cx="735" cy="206" r="0.8" fill="#f3d595" opacity="0.40" style="animation-delay: -1.8s"></circle>
+          <circle cx="847" cy="502" r="1.5" fill="#f3d595" opacity="0.24" style="animation-delay: -6.3s"></circle>
+          <circle cx="1269" cy="1034" r="1.5" fill="#f3d595" opacity="0.42" style="animation-delay: -3.9s"></circle>
+          <circle cx="1081" cy="467" r="1.5" fill="#f3d595" opacity="0.44" style="animation-delay: -2.1s"></circle>
+          <circle cx="747" cy="331" r="1.0" fill="#f3d595" opacity="0.33" style="animation-delay: -8.2s"></circle>
+          <circle cx="868" cy="84" r="1.1" fill="#f3d595" opacity="0.31" style="animation-delay: -7.9s"></circle>
+          <circle cx="1834" cy="826" r="1.2" fill="#f3d595" opacity="0.36" style="animation-delay: -9.5s"></circle>
+          <circle cx="576" cy="1051" r="1.4" fill="#f3d595" opacity="0.42" style="animation-delay: -11.2s"></circle>
+          <circle cx="1049" cy="511" r="0.9" fill="#f3d595" opacity="0.37" style="animation-delay: -0.9s"></circle>
+          <circle cx="594" cy="305" r="0.9" fill="#f3d595" opacity="0.30" style="animation-delay: -0.7s"></circle>
+          <circle cx="500" cy="243" r="0.9" fill="#f3d595" opacity="0.31" style="animation-delay: -0.4s"></circle>
+          <circle cx="1724" cy="743" r="0.9" fill="#f3d595" opacity="0.28" style="animation-delay: -4.9s"></circle>
+          <circle cx="1010" cy="213" r="1.5" fill="#f3d595" opacity="0.45" style="animation-delay: -6.5s"></circle>
+          <circle cx="1177" cy="173" r="0.9" fill="#f3d595" opacity="0.30" style="animation-delay: -3.7s"></circle>
+          <circle cx="1660" cy="254" r="0.8" fill="#f3d595" opacity="0.44" style="animation-delay: -7.4s"></circle>
+          <circle cx="705" cy="667" r="0.8" fill="#f3d595" opacity="0.34" style="animation-delay: -13.7s"></circle>
+          <circle cx="1709" cy="832" r="1.0" fill="#f3d595" opacity="0.31" style="animation-delay: -2.3s"></circle>
+          <circle cx="1581" cy="655" r="1.4" fill="#f3d595" opacity="0.30" style="animation-delay: -3.1s"></circle>
+          <circle cx="1636" cy="1144" r="1.5" fill="#f3d595" opacity="0.41" style="animation-delay: -11.5s"></circle>
+          <circle cx="1536" cy="325" r="1.2" fill="#f3d595" opacity="0.31" style="animation-delay: -0.4s"></circle>
+          <circle cx="539" cy="382" r="1.0" fill="#f3d595" opacity="0.38" style="animation-delay: -13.4s"></circle>
+          <circle cx="1126" cy="1092" r="1.6" fill="#f3d595" opacity="0.44" style="animation-delay: -5.1s"></circle>
+          <circle cx="809" cy="325" r="1.0" fill="#f3d595" opacity="0.27" style="animation-delay: -8.7s"></circle>
+          <circle cx="1760" cy="988" r="1.2" fill="#f3d595" opacity="0.37" style="animation-delay: -11.2s"></circle>
+      </g>
+      <g class="kc-dust kc-dust-near">
+          <circle cx="619" cy="793" r="4.0" fill="#f3d595" opacity="0.49" filter="url(#kcDustBlur)" style="animation-delay: -10.5s"></circle>
+          <circle cx="1169" cy="273" r="3.8" fill="#f3d595" opacity="0.37" filter="url(#kcDustBlur)" style="animation-delay: -11.2s"></circle>
+          <circle cx="1860" cy="508" r="3.1" fill="#f3d595" opacity="0.54" filter="url(#kcDustBlur)" style="animation-delay: -10.1s"></circle>
+          <circle cx="738" cy="217" r="2.7" fill="#f3d595" opacity="0.52" filter="url(#kcDustBlur)" style="animation-delay: -11.3s"></circle>
+          <circle cx="705" cy="973" r="4.2" fill="#f3d595" opacity="0.46" filter="url(#kcDustBlur)" style="animation-delay: -4.9s"></circle>
+          <circle cx="1268" cy="221" r="2.4" fill="#f3d595" opacity="0.54" filter="url(#kcDustBlur)" style="animation-delay: -9.1s"></circle>
+          <circle cx="1237" cy="1088" r="3.2" fill="#f3d595" opacity="0.51" filter="url(#kcDustBlur)" style="animation-delay: -11.6s"></circle>
+          <circle cx="795" cy="352" r="2.9" fill="#f3d595" opacity="0.34" filter="url(#kcDustBlur)" style="animation-delay: -8.2s"></circle>
+          <circle cx="863" cy="533" r="2.6" fill="#f3d595" opacity="0.53" filter="url(#kcDustBlur)" style="animation-delay: -5.0s"></circle>
+          <circle cx="1141" cy="710" r="4.0" fill="#f3d595" opacity="0.39" filter="url(#kcDustBlur)" style="animation-delay: -12.8s"></circle>
+          <circle cx="1202" cy="654" r="3.3" fill="#f3d595" opacity="0.28" filter="url(#kcDustBlur)" style="animation-delay: -6.2s"></circle>
+          <circle cx="756" cy="84" r="3.8" fill="#f3d595" opacity="0.32" filter="url(#kcDustBlur)" style="animation-delay: -6.6s"></circle>
+          <circle cx="1515" cy="681" r="3.0" fill="#f3d595" opacity="0.42" filter="url(#kcDustBlur)" style="animation-delay: -7.8s"></circle>
+          <circle cx="1598" cy="195" r="3.4" fill="#f3d595" opacity="0.34" filter="url(#kcDustBlur)" style="animation-delay: -3.9s"></circle>
       </g>
       <rect class="kc-grain" x="-200" y="-200" width="2320" height="1576" filter="url(#kcGrain)" opacity="0.07" style="mix-blend-mode: overlay"></rect>
     </svg>
@@ -203,7 +276,7 @@ details[open] .kc-plus{transform:rotate(45deg)}
     <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 200px; background: linear-gradient(180deg, rgba(10,10,10,0) 0%, #0a0a0a 100%)"></div>
     <div style="position: absolute; left: 0; right: 0; top: 0; height: 220px; background: linear-gradient(180deg, rgba(5,5,5,0.92) 0%, rgba(5,5,5,0.6) 45%, rgba(5,5,5,0) 100%)"></div>
 
-    <div style="position: relative; width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 160px 24px 120px; display: flex; flex-direction: column; justify-content: flex-end; gap: 40px">
+    <div class="kc-hero-content" style="position: relative; width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 150px 24px 120px; display: flex; flex-direction: column; justify-content: flex-start; gap: 36px">
       <h1 style="margin: 0; font-family: 'Proxima Nova', proxima-nova, Figtree, system-ui, sans-serif; font-weight: 800; font-size: clamp(38px, 5.1vw, 82px); line-height: 0.98; color: #ffffff; max-width: 880px; letter-spacing: -0.025em"><span class="kc-line"><span class="kc-line-in">More than just edits.</span></span><span class="kc-line"><span class="kc-line-in kc-line-2">Stories that <span style="color: #d8324f">move.</span></span></span></h1>
       <div style="display: flex; flex-wrap: wrap; gap: 12px">
         <a class="kc-textlink kc-intro-late" href="portfolio.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0; font-weight: 600; font-size: 17px; text-decoration: none; color: #e0405c">See our work <svg width="16" height="16" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="#e0405c" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
